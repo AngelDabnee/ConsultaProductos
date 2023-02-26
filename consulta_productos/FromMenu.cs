@@ -34,5 +34,10 @@ namespace consulta_productos
             Form fromConsulta = new FromConsulta();
             fromConsulta.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

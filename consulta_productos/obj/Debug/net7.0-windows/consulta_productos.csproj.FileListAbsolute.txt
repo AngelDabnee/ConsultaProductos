@@ -34,3 +34,4 @@ C:\Users\master\source\repos\consulta_productos\consulta_productos\obj\Debug\net
 C:\Users\master\source\repos\consulta_productos\consulta_productos\obj\Debug\net7.0-windows\consulta_productos.FromUsuario.resources
 C:\Users\master\source\repos\consulta_productos\consulta_productos\obj\Debug\net7.0-windows\consulta_productos.FromLogin.resources
 C:\Users\master\source\repos\consulta_productos\consulta_productos\obj\Debug\net7.0-windows\consulta_productos.FromMenu.resources
+C:\Users\master\source\repos\consulta_productos\consulta_productos\obj\Debug\net7.0-windows\consulta_productos.FromMenuUsuario.resources

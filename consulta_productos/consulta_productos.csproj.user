@@ -7,6 +7,9 @@
     <Compile Update="FromMenu.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FromMenuUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FromUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

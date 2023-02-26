@@ -58,8 +58,8 @@
             this.dGridUsuarios = new System.Windows.Forms.DataGridView();
             this.Columna_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CORREO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFoto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxNotShow)).BeginInit();
@@ -106,18 +106,17 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(928, 423);
+            this.panel3.Size = new System.Drawing.Size(1061, 564);
             this.panel3.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Black", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(447, 179);
+            this.label7.Location = new System.Drawing.Point(511, 239);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 11);
+            this.label7.Size = new System.Drawing.Size(59, 14);
             this.label7.TabIndex = 28;
             this.label7.Text = "OCULTAR";
             // 
@@ -128,10 +127,11 @@
             this.iconPictureBoxNotShow.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             this.iconPictureBoxNotShow.IconColor = System.Drawing.Color.Black;
             this.iconPictureBoxNotShow.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxNotShow.IconSize = 22;
-            this.iconPictureBoxNotShow.Location = new System.Drawing.Point(457, 152);
+            this.iconPictureBoxNotShow.IconSize = 29;
+            this.iconPictureBoxNotShow.Location = new System.Drawing.Point(522, 203);
+            this.iconPictureBoxNotShow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPictureBoxNotShow.Name = "iconPictureBoxNotShow";
-            this.iconPictureBoxNotShow.Size = new System.Drawing.Size(32, 22);
+            this.iconPictureBoxNotShow.Size = new System.Drawing.Size(37, 29);
             this.iconPictureBoxNotShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.iconPictureBoxNotShow.TabIndex = 27;
             this.iconPictureBoxNotShow.TabStop = false;
@@ -144,10 +144,11 @@
             this.iconPictureBoxShow.IconChar = FontAwesome.Sharp.IconChar.Eye;
             this.iconPictureBoxShow.IconColor = System.Drawing.Color.Black;
             this.iconPictureBoxShow.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxShow.IconSize = 22;
-            this.iconPictureBoxShow.Location = new System.Drawing.Point(383, 152);
+            this.iconPictureBoxShow.IconSize = 29;
+            this.iconPictureBoxShow.Location = new System.Drawing.Point(438, 203);
+            this.iconPictureBoxShow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPictureBoxShow.Name = "iconPictureBoxShow";
-            this.iconPictureBoxShow.Size = new System.Drawing.Size(32, 22);
+            this.iconPictureBoxShow.Size = new System.Drawing.Size(37, 29);
             this.iconPictureBoxShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.iconPictureBoxShow.TabIndex = 26;
             this.iconPictureBoxShow.TabStop = false;
@@ -157,9 +158,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Black", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(374, 179);
+            this.label2.Location = new System.Drawing.Point(427, 239);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 11);
+            this.label2.Size = new System.Drawing.Size(62, 14);
             this.label2.TabIndex = 25;
             this.label2.Text = "MOSTRAR";
             // 
@@ -170,9 +171,11 @@
             this.iconPictureBoxAdd.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
             this.iconPictureBoxAdd.IconColor = System.Drawing.Color.Black;
             this.iconPictureBoxAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxAdd.Location = new System.Drawing.Point(565, 168);
+            this.iconPictureBoxAdd.IconSize = 37;
+            this.iconPictureBoxAdd.Location = new System.Drawing.Point(646, 224);
+            this.iconPictureBoxAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPictureBoxAdd.Name = "iconPictureBoxAdd";
-            this.iconPictureBoxAdd.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBoxAdd.Size = new System.Drawing.Size(37, 43);
             this.iconPictureBoxAdd.TabIndex = 24;
             this.iconPictureBoxAdd.TabStop = false;
             this.iconPictureBoxAdd.Click += new System.EventHandler(this.iconPictureBoxAdd_Click);
@@ -181,9 +184,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(743, 211);
+            this.label6.Location = new System.Drawing.Point(849, 281);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 23);
+            this.label6.Size = new System.Drawing.Size(124, 28);
             this.label6.TabIndex = 23;
             this.label6.Text = "GUARDAR";
             // 
@@ -194,9 +197,11 @@
             this.iconPicBoxSave.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
             this.iconPicBoxSave.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPicBoxSave.Location = new System.Drawing.Point(705, 206);
+            this.iconPicBoxSave.IconSize = 37;
+            this.iconPicBoxSave.Location = new System.Drawing.Point(806, 275);
+            this.iconPicBoxSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxSave.Name = "iconPicBoxSave";
-            this.iconPicBoxSave.Size = new System.Drawing.Size(32, 32);
+            this.iconPicBoxSave.Size = new System.Drawing.Size(37, 43);
             this.iconPicBoxSave.TabIndex = 22;
             this.iconPicBoxSave.TabStop = false;
             this.iconPicBoxSave.Click += new System.EventHandler(this.iconPicBoxSave_Click);
@@ -205,9 +210,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(743, 173);
+            this.label5.Location = new System.Drawing.Point(849, 231);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 23);
+            this.label5.Size = new System.Drawing.Size(109, 28);
             this.label5.TabIndex = 21;
             this.label5.Text = "BORRAR";
             // 
@@ -215,9 +220,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(608, 211);
+            this.label4.Location = new System.Drawing.Point(695, 281);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 23);
+            this.label4.Size = new System.Drawing.Size(95, 28);
             this.label4.TabIndex = 20;
             this.label4.Text = "EDITAR";
             // 
@@ -225,9 +230,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(606, 175);
+            this.label3.Location = new System.Drawing.Point(693, 233);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 23);
+            this.label3.Size = new System.Drawing.Size(101, 28);
             this.label3.TabIndex = 19;
             this.label3.Text = "AÑADIR";
             // 
@@ -239,9 +244,11 @@
             this.iconPicBoxDelet.IconChar = FontAwesome.Sharp.IconChar.PersonCircleMinus;
             this.iconPicBoxDelet.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxDelet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPicBoxDelet.Location = new System.Drawing.Point(705, 168);
+            this.iconPicBoxDelet.IconSize = 37;
+            this.iconPicBoxDelet.Location = new System.Drawing.Point(806, 225);
+            this.iconPicBoxDelet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxDelet.Name = "iconPicBoxDelet";
-            this.iconPicBoxDelet.Size = new System.Drawing.Size(32, 32);
+            this.iconPicBoxDelet.Size = new System.Drawing.Size(37, 43);
             this.iconPicBoxDelet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPicBoxDelet.TabIndex = 18;
             this.iconPicBoxDelet.TabStop = false;
@@ -254,9 +261,11 @@
             this.iconPicBoxEdit.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.iconPicBoxEdit.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPicBoxEdit.Location = new System.Drawing.Point(565, 206);
+            this.iconPicBoxEdit.IconSize = 37;
+            this.iconPicBoxEdit.Location = new System.Drawing.Point(646, 275);
+            this.iconPicBoxEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxEdit.Name = "iconPicBoxEdit";
-            this.iconPicBoxEdit.Size = new System.Drawing.Size(32, 32);
+            this.iconPicBoxEdit.Size = new System.Drawing.Size(37, 43);
             this.iconPicBoxEdit.TabIndex = 17;
             this.iconPicBoxEdit.TabStop = false;
             this.iconPicBoxEdit.Click += new System.EventHandler(this.iconPicBoxEdit_Click);
@@ -265,20 +274,18 @@
             // 
             this.txtFoto.Enabled = false;
             this.txtFoto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFoto.Location = new System.Drawing.Point(638, 92);
-            this.txtFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFoto.Location = new System.Drawing.Point(729, 123);
             this.txtFoto.Name = "txtFoto";
-            this.txtFoto.Size = new System.Drawing.Size(115, 26);
+            this.txtFoto.Size = new System.Drawing.Size(131, 30);
             this.txtFoto.TabIndex = 13;
             // 
             // txtConfirmarPassword
             // 
             this.txtConfirmarPassword.Enabled = false;
             this.txtConfirmarPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtConfirmarPassword.Location = new System.Drawing.Point(155, 173);
-            this.txtConfirmarPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConfirmarPassword.Location = new System.Drawing.Point(177, 231);
             this.txtConfirmarPassword.Name = "txtConfirmarPassword";
-            this.txtConfirmarPassword.Size = new System.Drawing.Size(210, 26);
+            this.txtConfirmarPassword.Size = new System.Drawing.Size(239, 30);
             this.txtConfirmarPassword.TabIndex = 12;
             this.txtConfirmarPassword.UseSystemPasswordChar = true;
             // 
@@ -286,10 +293,9 @@
             // 
             this.txtPassword.Enabled = false;
             this.txtPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.Location = new System.Drawing.Point(155, 141);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPassword.Location = new System.Drawing.Point(177, 188);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(210, 26);
+            this.txtPassword.Size = new System.Drawing.Size(239, 30);
             this.txtPassword.TabIndex = 11;
             this.txtPassword.Tag = "*";
             this.txtPassword.UseSystemPasswordChar = true;
@@ -298,29 +304,27 @@
             // 
             this.txtCorreo.Enabled = false;
             this.txtCorreo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCorreo.Location = new System.Drawing.Point(155, 108);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCorreo.Location = new System.Drawing.Point(177, 144);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(347, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(396, 30);
             this.txtCorreo.TabIndex = 10;
             // 
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombre.Location = new System.Drawing.Point(155, 75);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Location = new System.Drawing.Point(177, 100);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(347, 26);
+            this.txtNombre.Size = new System.Drawing.Size(396, 30);
             this.txtNombre.TabIndex = 9;
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbPassword.Location = new System.Drawing.Point(4, 141);
+            this.lbPassword.Location = new System.Drawing.Point(5, 188);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(133, 23);
+            this.lbPassword.Size = new System.Drawing.Size(169, 28);
             this.lbPassword.TabIndex = 8;
             this.lbPassword.Text = "CONTRASEÑA";
             // 
@@ -328,9 +332,9 @@
             // 
             this.lbFoto.AutoSize = true;
             this.lbFoto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbFoto.Location = new System.Drawing.Point(661, 68);
+            this.lbFoto.Location = new System.Drawing.Point(755, 91);
             this.lbFoto.Name = "lbFoto";
-            this.lbFoto.Size = new System.Drawing.Size(58, 23);
+            this.lbFoto.Size = new System.Drawing.Size(71, 28);
             this.lbFoto.TabIndex = 7;
             this.lbFoto.Text = "FOTO";
             // 
@@ -338,9 +342,9 @@
             // 
             this.lbConfirmar.AutoSize = true;
             this.lbConfirmar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbConfirmar.Location = new System.Drawing.Point(4, 175);
+            this.lbConfirmar.Location = new System.Drawing.Point(5, 233);
             this.lbConfirmar.Name = "lbConfirmar";
-            this.lbConfirmar.Size = new System.Drawing.Size(116, 23);
+            this.lbConfirmar.Size = new System.Drawing.Size(150, 28);
             this.lbConfirmar.TabIndex = 6;
             this.lbConfirmar.Text = "CONFIRMAR";
             // 
@@ -348,9 +352,9 @@
             // 
             this.lbCorreo.AutoSize = true;
             this.lbCorreo.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbCorreo.Location = new System.Drawing.Point(4, 108);
+            this.lbCorreo.Location = new System.Drawing.Point(5, 144);
             this.lbCorreo.Name = "lbCorreo";
-            this.lbCorreo.Size = new System.Drawing.Size(84, 23);
+            this.lbCorreo.Size = new System.Drawing.Size(108, 28);
             this.lbCorreo.TabIndex = 5;
             this.lbCorreo.Text = "CORREO";
             // 
@@ -358,9 +362,9 @@
             // 
             this.lbnombre.AutoSize = true;
             this.lbnombre.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbnombre.Location = new System.Drawing.Point(4, 75);
+            this.lbnombre.Location = new System.Drawing.Point(5, 100);
             this.lbnombre.Name = "lbnombre";
-            this.lbnombre.Size = new System.Drawing.Size(87, 23);
+            this.lbnombre.Size = new System.Drawing.Size(111, 28);
             this.lbnombre.TabIndex = 3;
             this.lbnombre.Text = "NOMBRE";
             // 
@@ -372,11 +376,10 @@
             this.iconPiBox.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
             this.iconPiBox.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPiBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPiBox.IconSize = 31;
-            this.iconPiBox.Location = new System.Drawing.Point(802, 32);
-            this.iconPiBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconPiBox.IconSize = 40;
+            this.iconPiBox.Location = new System.Drawing.Point(917, 43);
             this.iconPiBox.Name = "iconPiBox";
-            this.iconPiBox.Size = new System.Drawing.Size(42, 31);
+            this.iconPiBox.Size = new System.Drawing.Size(47, 40);
             this.iconPiBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.iconPiBox.TabIndex = 2;
             this.iconPiBox.TabStop = false;
@@ -385,19 +388,18 @@
             // txtBuscador
             // 
             this.txtBuscador.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBuscador.Location = new System.Drawing.Point(4, 36);
-            this.txtBuscador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscador.Location = new System.Drawing.Point(5, 48);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(791, 26);
+            this.txtBuscador.Size = new System.Drawing.Size(903, 30);
             this.txtBuscador.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(290, 6);
+            this.label1.Location = new System.Drawing.Point(331, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 23);
+            this.label1.Size = new System.Drawing.Size(283, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "CAPTURA DE USUARIOS";
             // 
@@ -405,10 +407,9 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.dGridUsuarios);
-            this.panel2.Location = new System.Drawing.Point(10, 266);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(11, 355);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(854, 153);
+            this.panel2.Size = new System.Drawing.Size(975, 203);
             this.panel2.TabIndex = 3;
             // 
             // dGridUsuarios
@@ -424,15 +425,14 @@
             this.dGridUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Columna_ID,
             this.Column_nombre,
-            this.ColumnPassword,
-            this.ColumnCorreo,
+            this.CORREO,
+            this.ColumPassword,
             this.ColumnFoto});
-            this.dGridUsuarios.Location = new System.Drawing.Point(-2, 2);
-            this.dGridUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dGridUsuarios.Location = new System.Drawing.Point(-2, 3);
             this.dGridUsuarios.Name = "dGridUsuarios";
             this.dGridUsuarios.RowHeadersWidth = 51;
             this.dGridUsuarios.RowTemplate.Height = 29;
-            this.dGridUsuarios.Size = new System.Drawing.Size(849, 139);
+            this.dGridUsuarios.Size = new System.Drawing.Size(970, 185);
             this.dGridUsuarios.TabIndex = 0;
             this.dGridUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridUsuario_CellClick);
             // 
@@ -448,17 +448,17 @@
             this.Column_nombre.MinimumWidth = 6;
             this.Column_nombre.Name = "Column_nombre";
             // 
-            // ColumnPassword
+            // CORREO
             // 
-            this.ColumnPassword.HeaderText = "CONTRASEÑA";
-            this.ColumnPassword.MinimumWidth = 6;
-            this.ColumnPassword.Name = "ColumnPassword";
+            this.CORREO.HeaderText = "CORREO";
+            this.CORREO.MinimumWidth = 6;
+            this.CORREO.Name = "CORREO";
             // 
-            // ColumnCorreo
+            // ColumPassword
             // 
-            this.ColumnCorreo.HeaderText = "CORREO";
-            this.ColumnCorreo.MinimumWidth = 6;
-            this.ColumnCorreo.Name = "ColumnCorreo";
+            this.ColumPassword.HeaderText = "CONTRASEÑA";
+            this.ColumPassword.MinimumWidth = 6;
+            this.ColumPassword.Name = "ColumPassword";
             // 
             // ColumnFoto
             // 
@@ -468,12 +468,11 @@
             // 
             // FromUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 423);
+            this.ClientSize = new System.Drawing.Size(1061, 564);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FromUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormUsuario";
@@ -525,8 +524,8 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxNotShow;
         private DataGridViewTextBoxColumn Columna_ID;
         private DataGridViewTextBoxColumn Column_nombre;
-        private DataGridViewTextBoxColumn ColumnPassword;
-        private DataGridViewTextBoxColumn ColumnCorreo;
+        private DataGridViewTextBoxColumn CORREO;
+        private DataGridViewTextBoxColumn ColumPassword;
         private DataGridViewTextBoxColumn ColumnFoto;
     }
 }

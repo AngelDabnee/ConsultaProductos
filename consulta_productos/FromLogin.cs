@@ -34,9 +34,17 @@ namespace consulta_productos
                 //4.que se ejecute
                 dr = comando.ExecuteReader();
                 if (dr.Read())//para que leea 
-                {
-                   Form fromMenu = new FromMenu();
-                   fromMenu.Show();
+                {   //Con esta sentencia mandamos al usuario ya sea al menú admin o al menú normal
+                    if (txtUsuario.Text == "AngelDabnee" && txtPassword.Text == "AngelDabnee")
+                    {
+                        Form fromMenu = new FromMenu();
+                        fromMenu.Show();
+                    }
+                    else 
+                    {
+                        Form fromMenuUsuario = new FromMenuUsuario();
+                        fromMenuUsuario.Show();
+                    }
 
                 }
                 else
