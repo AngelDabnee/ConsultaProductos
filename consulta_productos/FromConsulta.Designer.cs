@@ -31,12 +31,9 @@ namespace consulta_productos
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.signoPrecio = new System.Windows.Forms.Label();
-            this.iconPiBox = new FontAwesome.Sharp.IconPictureBox();
-            this.txtTotal = new System.Windows.Forms.Label();
+            this.iconPicBoxShare = new FontAwesome.Sharp.IconPictureBox();
             this.txtBuscador = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblbuscarproducto = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dGridProductos = new System.Windows.Forms.DataGridView();
             this.Columna_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +44,7 @@ namespace consulta_productos
             this.ColumnImagen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPiBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPicBoxShare)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridProductos)).BeginInit();
             this.SuspendLayout();
@@ -66,65 +63,35 @@ namespace consulta_productos
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
+            this.panel3.BackgroundImage = global::consulta_productos.Properties.Resources.fondo_consulta;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.signoPrecio);
-            this.panel3.Controls.Add(this.iconPiBox);
-            this.panel3.Controls.Add(this.txtTotal);
+            this.panel3.Controls.Add(this.iconPicBoxShare);
             this.panel3.Controls.Add(this.txtBuscador);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblbuscarproducto);
             this.panel3.Location = new System.Drawing.Point(3, 6);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(858, 136);
+            this.panel3.Size = new System.Drawing.Size(858, 232);
             this.panel3.TabIndex = 1;
             // 
-            // label2
+            // iconPicBoxShare
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(599, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 31);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "TOTAL";
-            // 
-            // signoPrecio
-            // 
-            this.signoPrecio.AutoSize = true;
-            this.signoPrecio.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.signoPrecio.Location = new System.Drawing.Point(698, 99);
-            this.signoPrecio.Name = "signoPrecio";
-            this.signoPrecio.Size = new System.Drawing.Size(29, 31);
-            this.signoPrecio.TabIndex = 4;
-            this.signoPrecio.Text = "$";
-            // 
-            // iconPiBox
-            // 
-            this.iconPiBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.iconPiBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPiBox.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
-            this.iconPiBox.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPiBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPiBox.IconSize = 30;
-            this.iconPiBox.Location = new System.Drawing.Point(802, 32);
-            this.iconPiBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconPiBox.Name = "iconPiBox";
-            this.iconPiBox.Size = new System.Drawing.Size(42, 30);
-            this.iconPiBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPiBox.TabIndex = 2;
-            this.iconPiBox.TabStop = false;
-            this.iconPiBox.Click += new System.EventHandler(this.iconPiBox_Click);
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.AutoSize = true;
-            this.txtTotal.Font = new System.Drawing.Font("Arial Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtTotal.Location = new System.Drawing.Point(733, 99);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(29, 31);
-            this.txtTotal.TabIndex = 3;
-            this.txtTotal.Text = "0";
+            this.iconPicBoxShare.BackColor = System.Drawing.Color.Silver;
+            this.iconPicBoxShare.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.iconPicBoxShare.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPicBoxShare.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
+            this.iconPicBoxShare.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPicBoxShare.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPicBoxShare.IconSize = 26;
+            this.iconPicBoxShare.Location = new System.Drawing.Point(801, 36);
+            this.iconPicBoxShare.Name = "iconPicBoxShare";
+            this.iconPicBoxShare.Size = new System.Drawing.Size(32, 26);
+            this.iconPicBoxShare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPicBoxShare.TabIndex = 2;
+            this.iconPicBoxShare.TabStop = false;
+            this.iconPicBoxShare.UseGdi = true;
+            this.iconPicBoxShare.Click += new System.EventHandler(this.iconPicBoxShare_Click);
             // 
             // txtBuscador
             // 
@@ -136,28 +103,35 @@ namespace consulta_productos
             this.txtBuscador.TabIndex = 1;
             this.txtBuscador.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label1
+            // lblbuscarproducto
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(398, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "COBRO";
+            this.lblbuscarproducto.AutoSize = true;
+            this.lblbuscarproducto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblbuscarproducto.Location = new System.Drawing.Point(349, 7);
+            this.lblbuscarproducto.Name = "lblbuscarproducto";
+            this.lblbuscarproducto.Size = new System.Drawing.Size(186, 23);
+            this.lblbuscarproducto.TabIndex = 0;
+            this.lblbuscarproducto.Text = "BUSCAR PRODUCTO";
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.dGridProductos);
-            this.panel2.Location = new System.Drawing.Point(3, 107);
+            this.panel2.Location = new System.Drawing.Point(4, 242);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(807, 294);
+            this.panel2.Size = new System.Drawing.Size(857, 151);
             this.panel2.TabIndex = 0;
             // 
             // dGridProductos
             // 
+            this.dGridProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dGridProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGridProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dGridProductos.BackgroundColor = System.Drawing.Color.DarkMagenta;
+            this.dGridProductos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGridProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Columna_ID,
@@ -166,12 +140,12 @@ namespace consulta_productos
             this.ColumnDESCRIPCION,
             this.ColumnPrecio,
             this.ColumnImagen});
-            this.dGridProductos.Location = new System.Drawing.Point(-2, 37);
+            this.dGridProductos.Location = new System.Drawing.Point(-2, 1);
             this.dGridProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGridProductos.Name = "dGridProductos";
             this.dGridProductos.RowHeadersWidth = 51;
             this.dGridProductos.RowTemplate.Height = 29;
-            this.dGridProductos.Size = new System.Drawing.Size(807, 250);
+            this.dGridProductos.Size = new System.Drawing.Size(857, 144);
             this.dGridProductos.TabIndex = 0;
             // 
             // Columna_ID
@@ -179,42 +153,36 @@ namespace consulta_productos
             this.Columna_ID.HeaderText = "ID";
             this.Columna_ID.MinimumWidth = 6;
             this.Columna_ID.Name = "Columna_ID";
-            this.Columna_ID.Width = 125;
             // 
             // Column_nombre
             // 
             this.Column_nombre.HeaderText = "NOMBRE";
             this.Column_nombre.MinimumWidth = 6;
             this.Column_nombre.Name = "Column_nombre";
-            this.Column_nombre.Width = 125;
             // 
             // ColumnCodigo_Barras
             // 
             this.ColumnCodigo_Barras.HeaderText = "CÓDIGO DE BARRA";
             this.ColumnCodigo_Barras.MinimumWidth = 6;
             this.ColumnCodigo_Barras.Name = "ColumnCodigo_Barras";
-            this.ColumnCodigo_Barras.Width = 125;
             // 
             // ColumnDESCRIPCION
             // 
             this.ColumnDESCRIPCION.HeaderText = "DESCRIPCIÓN";
             this.ColumnDESCRIPCION.MinimumWidth = 6;
             this.ColumnDESCRIPCION.Name = "ColumnDESCRIPCION";
-            this.ColumnDESCRIPCION.Width = 125;
             // 
             // ColumnPrecio
             // 
             this.ColumnPrecio.HeaderText = "PRECIO";
             this.ColumnPrecio.MinimumWidth = 6;
             this.ColumnPrecio.Name = "ColumnPrecio";
-            this.ColumnPrecio.Width = 125;
             // 
             // ColumnImagen
             // 
             this.ColumnImagen.HeaderText = "IMAGEN";
             this.ColumnImagen.MinimumWidth = 6;
             this.ColumnImagen.Name = "ColumnImagen";
-            this.ColumnImagen.Width = 125;
             // 
             // FromConsulta
             // 
@@ -228,7 +196,7 @@ namespace consulta_productos
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPiBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPicBoxShare)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGridProductos)).EndInit();
             this.ResumeLayout(false);
@@ -240,7 +208,7 @@ namespace consulta_productos
         private Panel panel1;
         private Panel panel3;
         private TextBox txtBuscador;
-        private Label label1;
+        private Label lblbuscarproducto;
         private Panel panel2;
         private DataGridView dGridProductos;
         private FontAwesome.Sharp.IconPictureBox iconPiBox;
@@ -250,8 +218,6 @@ namespace consulta_productos
         private DataGridViewTextBoxColumn ColumnDESCRIPCION;
         private DataGridViewTextBoxColumn ColumnPrecio;
         private DataGridViewTextBoxColumn ColumnImagen;
-        private Label txtTotal;
-        private Label signoPrecio;
-        private Label label2;
-    }
+        private FontAwesome.Sharp.IconPictureBox iconPicBoxShare;
+    } 
 }

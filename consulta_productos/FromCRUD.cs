@@ -13,8 +13,9 @@ namespace consulta_productos
         MySqlCommand comando;
         //Objeto para recibir datos del SELECT
         MySqlDataReader dr;//Para que pueda leer lo que tenemos en el txt. 
-        int idcelds;//Lo usaremos para la edición. Se llenará cuando le demos click a una celda
-        public FromCRUD()
+        int id = 0; //La utilizaremos para guardar los datos del datagrid y eliminarlos con el delete en la querry correspondiente.
+                    //esta variable también funciona en modificar ya que, vamos a señalar en donde queremos modificar dependiendo del id
+         public FromCRUD()
         {
             InitializeComponent();
         }
@@ -159,7 +160,9 @@ namespace consulta_productos
             txtCodiBarra.Text = dGridProductos.Rows[celdas].Cells[3].Value.ToString();
             txtPrecio.Text = dGridProductos.Rows[celdas].Cells[4].Value.ToString();
             txtImagen.Text = dGridProductos.Rows[celdas].Cells[5].Value.ToString();
-            idcelds = (int)dGridProductos.Rows[celdas].Cells[0].Value;//Convertimos para no tener error de tipos de dato
+            this.id = (int)dGridProductos.Rows[celdas].Cells[0].Value;//Convertimos para no tener error de tipos de dato
+                                                                        //Además de esto, esta la usamos, para pasar los datos del producto
+                                                                        //y eliminarlos sin afectar TODOS los datos de la tabla
         }
         //Daremos funcionalidad a la query
         private void iconPicBoxEdit_Click(object sender, EventArgs e)
@@ -173,11 +176,20 @@ namespace consulta_productos
                 "codigo_barras = '" + txtCodiBarra.Text + "'," +
                 "precio = '" + txtPrecio.Text + "'," +
                 "imagen = '" + txtImagen.Text + "'" +
-                "WHERE id = '" + idcelds + "';");
+                "WHERE id = '" + this.id + "';");
+            MessageBox.Show("PRODUCTO MODIFICADO CON ÉXITO");
             //3.Ejecutamos la conexion
             comando.Connection = con;
             //Ejecutamso el comando
-            dr = comando.ExecuteReader();
+            int res = comando.ExecuteNonQuery();
+            if (res == 1)
+            {
+                MessageBox.Show("PRODUCTO MODIFICADO CON ÉXITO");
+            }
+            else 
+            {
+                MessageBox.Show("ERROR AL MODIFICAR");
+            }
             //Cerramos conexión
             con.Close();
         }
@@ -187,7 +199,7 @@ namespace consulta_productos
             //1. Conectarse
             con.Open();
             //2.Crear el comando para borrar los datos. 
-            comando = new MySqlCommand("DELETE FROM productos WHERE id = id");
+            comando = new MySqlCommand("DELETE FROM productos WHERE id = " + this.id);//Aquí como guardamos los datos, podemos modificarlos
             //3. Ejecutamos la conexión
             comando.Connection = con;
             //4.Usamos el comando necesario
@@ -236,37 +248,6 @@ namespace consulta_productos
                 txtImagen.Enabled = false;
                 txtImagen.Clear();
             }
-        }
-
-        private void iconPicAplicar_Click(object sender, EventArgs e)
-        {            //1. Nos conectamos. 
-            con.Open();
-            //2.Crear el comando insert de la base de datos. 
-            comando = new MySqlCommand("INSERT INTO productos (nombre, descripcion, codigo_barras, precio,imagen) " +
-                     "VALUES('" + txtNombre.Text + "','" + txtDescripcion.Text + "','" + txtCodiBarra.Text + "'," + txtPrecio.Text + ",'" + txtImagen.Text + "' )");
-            //3. Conectar el comando con el con.
-            comando.Connection = con;
-            //Ejecutamos el insert con el ExecuteNonQuery. 
-            int res = comando.ExecuteNonQuery();
-            //datos fueron capturados correctamente o todos los datos se capturaron 
-            //4- Validar que haya sido ejecutaDO CORRECTAMENTE
-            if (res == 1)//Comparamos que sea 1, debido a que cuando hacemos los insert, cada insert es 1 linea agregada. 
-            {
-                //msg OK
-                MessageBox.Show("BORRADO Y GUARDADO CON ÉXITO");
-            }
-            else
-            {
-                //msg OK
-                MessageBox.Show("ERROREN BORRAR Y GUARDADO");
-            }
-            //5- cerrar CONEXION
-            con.Close();
-            //vamos a limpiar los texto y deshabilitarlos
-            this.limpiarForm(false);
-            //Recargamos el fform
-            this.FromCRUD_Load(sender, e);//Se muestra un objeto.
-
         }
     }
 }

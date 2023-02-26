@@ -19,17 +19,16 @@ namespace consulta_productos
         {
 
         }
-
-        private void iconPiBox_Click(object sender, EventArgs e)
+        private void iconPicBoxShare_Click(object sender, EventArgs e)
         {
             //conectamos a la base de datos
             //definir el comando
             con.Open();
             //Definir el comando SELECT
-            comando = new MySqlCommand("SELECT * FROM productos WHERE nombre='" + txtBuscador.Text+"'" );
+            comando = new MySqlCommand("SELECT * FROM productos WHERE nombre='" + txtBuscador.Text + "'");
             //Ejecutamos el comando y guardamos el RESULTADO
             //asignamos la con al comando
-            comando.Connection= con;
+            comando.Connection = con;
             //comando.EndExecuteNonQuery();//Para ejecutar INSERT, DELETE, UPDATE
             //comando.ExecuteScalar();//para ejecutar select con un solo campo
             dr = comando.ExecuteReader();
@@ -48,14 +47,8 @@ namespace consulta_productos
                                                           dr.GetString(3),
                                                           dr.GetDouble(4),
                                                           dr.GetString(5) });//Con esto definimos las filas de nuestra tabla, según las características de esta
-                    double total = 0;
-                    foreach (DataGridViewRow row in dGridProductos.Rows)
-                    {
-                        total += Convert.ToDouble(row.Cells[4].Value);
-                    }
-                    txtTotal.Text = Convert.ToString(total);
-                }
 
+                }
             }
             else //Este es para si no tenemos el registro imprimir un mensaje donde no tenemos registros
             {
@@ -63,6 +56,12 @@ namespace consulta_productos
             }
             //CERRAMOS LA CONEXIÓN
             con.Close();
+        }
+
+        private void butonConfigure_Click(object sender, EventArgs e)
+        {
+            Form fromCRUD = new FromCRUD();
+            fromCRUD.Show();
         }
     }
 }
