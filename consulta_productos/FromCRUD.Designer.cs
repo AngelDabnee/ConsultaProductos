@@ -136,7 +136,7 @@ namespace consulta_productos
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(798, 277);
+            this.label6.Location = new System.Drawing.Point(844, 277);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 28);
             this.label6.TabIndex = 23;
@@ -150,7 +150,7 @@ namespace consulta_productos
             this.iconPicBoxSave.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPicBoxSave.IconSize = 37;
-            this.iconPicBoxSave.Location = new System.Drawing.Point(755, 277);
+            this.iconPicBoxSave.Location = new System.Drawing.Point(801, 277);
             this.iconPicBoxSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxSave.Name = "iconPicBoxSave";
             this.iconPicBoxSave.Size = new System.Drawing.Size(37, 43);
@@ -162,7 +162,7 @@ namespace consulta_productos
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(798, 233);
+            this.label5.Location = new System.Drawing.Point(844, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 28);
             this.label5.TabIndex = 21;
@@ -172,17 +172,17 @@ namespace consulta_productos
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(645, 283);
+            this.label4.Location = new System.Drawing.Point(618, 284);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 28);
+            this.label4.Size = new System.Drawing.Size(157, 28);
             this.label4.TabIndex = 20;
-            this.label4.Text = "EDITAR";
+            this.label4.Text = "ACTUALIZAR";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(642, 235);
+            this.label3.Location = new System.Drawing.Point(618, 235);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 28);
             this.label3.TabIndex = 19;
@@ -197,7 +197,7 @@ namespace consulta_productos
             this.iconPicBoxDelet.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxDelet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPicBoxDelet.IconSize = 37;
-            this.iconPicBoxDelet.Location = new System.Drawing.Point(755, 227);
+            this.iconPicBoxDelet.Location = new System.Drawing.Point(801, 224);
             this.iconPicBoxDelet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxDelet.Name = "iconPicBoxDelet";
             this.iconPicBoxDelet.Size = new System.Drawing.Size(37, 43);
@@ -214,7 +214,7 @@ namespace consulta_productos
             this.iconPicBoxEdit.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPicBoxEdit.IconSize = 37;
-            this.iconPicBoxEdit.Location = new System.Drawing.Point(595, 277);
+            this.iconPicBoxEdit.Location = new System.Drawing.Point(575, 277);
             this.iconPicBoxEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxEdit.Name = "iconPicBoxEdit";
             this.iconPicBoxEdit.Size = new System.Drawing.Size(37, 43);
@@ -231,7 +231,7 @@ namespace consulta_productos
             this.iconPicBoxNew.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPicBoxNew.IconSize = 37;
-            this.iconPicBoxNew.Location = new System.Drawing.Point(595, 224);
+            this.iconPicBoxNew.Location = new System.Drawing.Point(575, 224);
             this.iconPicBoxNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxNew.Name = "iconPicBoxNew";
             this.iconPicBoxNew.Size = new System.Drawing.Size(37, 43);

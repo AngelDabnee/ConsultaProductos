@@ -184,7 +184,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(849, 281);
+            this.label6.Location = new System.Drawing.Point(914, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 28);
             this.label6.TabIndex = 23;
@@ -198,7 +198,7 @@
             this.iconPicBoxSave.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPicBoxSave.IconSize = 37;
-            this.iconPicBoxSave.Location = new System.Drawing.Point(806, 275);
+            this.iconPicBoxSave.Location = new System.Drawing.Point(871, 274);
             this.iconPicBoxSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxSave.Name = "iconPicBoxSave";
             this.iconPicBoxSave.Size = new System.Drawing.Size(37, 43);
@@ -210,7 +210,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(849, 231);
+            this.label5.Location = new System.Drawing.Point(914, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 28);
             this.label5.TabIndex = 21;
@@ -222,9 +222,9 @@
             this.label4.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(695, 281);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 28);
+            this.label4.Size = new System.Drawing.Size(157, 28);
             this.label4.TabIndex = 20;
-            this.label4.Text = "EDITAR";
+            this.label4.Text = "ACTUALIZAR";
             // 
             // label3
             // 
@@ -245,7 +245,7 @@
             this.iconPicBoxDelet.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxDelet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPicBoxDelet.IconSize = 37;
-            this.iconPicBoxDelet.Location = new System.Drawing.Point(806, 225);
+            this.iconPicBoxDelet.Location = new System.Drawing.Point(871, 224);
             this.iconPicBoxDelet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxDelet.Name = "iconPicBoxDelet";
             this.iconPicBoxDelet.Size = new System.Drawing.Size(37, 43);
