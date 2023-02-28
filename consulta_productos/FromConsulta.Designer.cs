@@ -54,10 +54,9 @@ namespace consulta_productos
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(1, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(1, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(867, 406);
+            this.panel1.Size = new System.Drawing.Size(990, 540);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -69,10 +68,9 @@ namespace consulta_productos
             this.panel3.Controls.Add(this.iconPicBoxShare);
             this.panel3.Controls.Add(this.txtBuscador);
             this.panel3.Controls.Add(this.lblbuscarproducto);
-            this.panel3.Location = new System.Drawing.Point(3, 6);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(3, 8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(858, 232);
+            this.panel3.Size = new System.Drawing.Size(980, 308);
             this.panel3.TabIndex = 1;
             // 
             // iconPicBoxShare
@@ -83,10 +81,11 @@ namespace consulta_productos
             this.iconPicBoxShare.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
             this.iconPicBoxShare.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxShare.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPicBoxShare.IconSize = 26;
-            this.iconPicBoxShare.Location = new System.Drawing.Point(801, 36);
+            this.iconPicBoxShare.IconSize = 33;
+            this.iconPicBoxShare.Location = new System.Drawing.Point(915, 48);
+            this.iconPicBoxShare.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxShare.Name = "iconPicBoxShare";
-            this.iconPicBoxShare.Size = new System.Drawing.Size(32, 26);
+            this.iconPicBoxShare.Size = new System.Drawing.Size(36, 33);
             this.iconPicBoxShare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.iconPicBoxShare.TabIndex = 2;
             this.iconPicBoxShare.TabStop = false;
@@ -96,10 +95,9 @@ namespace consulta_productos
             // txtBuscador
             // 
             this.txtBuscador.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBuscador.Location = new System.Drawing.Point(4, 36);
-            this.txtBuscador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscador.Location = new System.Drawing.Point(5, 48);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(791, 26);
+            this.txtBuscador.Size = new System.Drawing.Size(903, 30);
             this.txtBuscador.TabIndex = 1;
             this.txtBuscador.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -107,9 +105,9 @@ namespace consulta_productos
             // 
             this.lblbuscarproducto.AutoSize = true;
             this.lblbuscarproducto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblbuscarproducto.Location = new System.Drawing.Point(349, 7);
+            this.lblbuscarproducto.Location = new System.Drawing.Point(399, 9);
             this.lblbuscarproducto.Name = "lblbuscarproducto";
-            this.lblbuscarproducto.Size = new System.Drawing.Size(186, 23);
+            this.lblbuscarproducto.Size = new System.Drawing.Size(239, 28);
             this.lblbuscarproducto.TabIndex = 0;
             this.lblbuscarproducto.Text = "BUSCAR PRODUCTO";
             // 
@@ -117,10 +115,9 @@ namespace consulta_productos
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.dGridProductos);
-            this.panel2.Location = new System.Drawing.Point(4, 242);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(5, 233);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(857, 151);
+            this.panel2.Size = new System.Drawing.Size(979, 290);
             this.panel2.TabIndex = 0;
             // 
             // dGridProductos
@@ -140,12 +137,11 @@ namespace consulta_productos
             this.ColumnDESCRIPCION,
             this.ColumnPrecio,
             this.ColumnImagen});
-            this.dGridProductos.Location = new System.Drawing.Point(-2, 1);
-            this.dGridProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dGridProductos.Location = new System.Drawing.Point(-2, 87);
             this.dGridProductos.Name = "dGridProductos";
             this.dGridProductos.RowHeadersWidth = 51;
             this.dGridProductos.RowTemplate.Height = 29;
-            this.dGridProductos.Size = new System.Drawing.Size(857, 144);
+            this.dGridProductos.Size = new System.Drawing.Size(974, 196);
             this.dGridProductos.TabIndex = 0;
             // 
             // Columna_ID
@@ -186,13 +182,13 @@ namespace consulta_productos
             // 
             // FromConsulta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 408);
+            this.ClientSize = new System.Drawing.Size(993, 544);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FromConsulta";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FromConsulta_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

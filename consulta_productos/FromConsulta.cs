@@ -25,7 +25,7 @@ namespace consulta_productos
             //definir el comando
             con.Open();
             //Definir el comando SELECT
-            comando = new MySqlCommand("SELECT * FROM productos WHERE nombre='" + txtBuscador.Text + "'");
+            comando = new MySqlCommand("SELECT * FROM productos ORDER BY nombre ASC");
             //Ejecutamos el comando y guardamos el RESULTADO
             //asignamos la con al comando
             comando.Connection = con;
@@ -62,6 +62,43 @@ namespace consulta_productos
         {
             Form fromCRUD = new FromCRUD();
             fromCRUD.Show();
+        }
+
+        private void FromConsulta_Load(object sender, EventArgs e)
+        {
+            {
+
+                //Lo que haremos ahora será mostrar la base de datos, lo ordenaremos por pasos. 
+                //Vamos a conectarnos para mostrar los productos que se encuentran en la base de datos. 
+                //1. Conectarse. 
+                con.Open();
+                //2. Creamos el comando SELECT* para poder seleccionar todos los campos de nuestra base de datos
+                comando = new MySqlCommand("SELECT * FROM productos ORDER BY nombre ASC");
+                //3.Asociamos la conexión al comando. 
+                comando.Connection = con;
+                //4.Ejecutamos el comando command con una de sus variantes, (dataread = executeReader())
+                dr = comando.ExecuteReader();
+                //5. Mostramos en el GridView, para ello necesitamos saber si existen datos en los renglones. 
+                if (dr.HasRows)
+                {
+                    dGridProductos.Rows.Clear();
+                    //Leer y mostrar en el data
+                    while (dr.Read())
+                    {
+                        //mostrar cada campo dentro un RENGLON del GridView
+                        dGridProductos.Rows.Add(
+                                dr.GetInt32(0),
+                                dr.GetString(1),
+                                dr.GetString(2),
+                                dr.GetString(3),
+                                dr.GetDouble(4),
+                                dr.GetString(5)
+                            );
+                    }
+                }
+                //6.Cerramos la conexión. 
+                con.Close();
+            }
         }
     }
 }

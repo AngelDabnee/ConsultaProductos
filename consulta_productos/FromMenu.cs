@@ -39,5 +39,10 @@ namespace consulta_productos
         {
 
         }
+
+        private void FromMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

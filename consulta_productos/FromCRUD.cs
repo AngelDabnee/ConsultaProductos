@@ -15,6 +15,7 @@ namespace consulta_productos
         MySqlDataReader dr;//Para que pueda leer lo que tenemos en el txt. 
         int id = 0; //La utilizaremos para guardar los datos del datagrid y eliminarlos con el delete en la querry correspondiente.
                     //esta variable también funciona en modificar ya que, vamos a señalar en donde queremos modificar dependiendo del id
+        bool edit;
          public FromCRUD()
         {
             InitializeComponent();
@@ -113,37 +114,7 @@ namespace consulta_productos
 
         private void FromCRUD_Load(object sender, EventArgs e)
         {
-            
-                //Lo que haremos ahora será mostrar la base de datos, lo ordenaremos por pasos. 
-                //Vamos a conectarnos para mostrar los productos que se encuentran en la base de datos. 
-                //1. Conectarse. 
-                con.Open();
-                //2. Creamos el comando SELECT* para poder seleccionar todos los campos de nuestra base de datos
-                comando = new MySqlCommand("SELECT * FROM productos ORDER BY nombre ASC");
-                //3.Asociamos la conexión al comando. 
-                comando.Connection = con;
-                //4.Ejecutamos el comando command con una de sus variantes, (dataread = executeReader())
-                dr = comando.ExecuteReader();
-                //5. Mostramos en el GridView, para ello necesitamos saber si existen datos en los renglones. 
-                if (dr.HasRows)
-                {
-                    dGridProductos.Rows.Clear();
-                    //Leer y mostrar en el data
-                    while (dr.Read())
-                    {
-                        //mostrar cada campo dentro un RENGLON del GridView
-                        dGridProductos.Rows.Add(
-                                dr.GetInt32(0),
-                                dr.GetString(1),
-                                dr.GetString(2),
-                                dr.GetString(3),
-                                dr.GetDouble(4),
-                                dr.GetString(5)
-                            );
-                    }
-                }
-                //6.Cerramos la conexión. 
-                con.Close();
+            this.cargarDatos();
         }
 
 
@@ -153,16 +124,20 @@ namespace consulta_productos
         //Que tiene nuestra tabla de donde mostramos lo resultados, en ella vamos a asignar el cambio para poder modificar
         private void dGridProductos_CellClick(object sender, DataGridViewCellEventArgs e)//El evento se llama e
         {
-            int celdas = e.RowIndex;//Al index donde le dimos click, (se llama e)
-            //En cada campo, de la tabla, en la variable creada, en la celda de la posición del campo
-            txtNombre.Text = dGridProductos.Rows[celdas].Cells[1].Value.ToString();
-            txtDescripcion.Text = dGridProductos.Rows[celdas].Cells[2].Value.ToString();
-            txtCodiBarra.Text = dGridProductos.Rows[celdas].Cells[3].Value.ToString();
-            txtPrecio.Text = dGridProductos.Rows[celdas].Cells[4].Value.ToString();
-            txtImagen.Text = dGridProductos.Rows[celdas].Cells[5].Value.ToString();
-            this.id = (int)dGridProductos.Rows[celdas].Cells[0].Value;//Convertimos para no tener error de tipos de dato
-                                                                        //Además de esto, esta la usamos, para pasar los datos del producto
-                                                                        //y eliminarlos sin afectar TODOS los datos de la tabla
+            //Este rowIndex, es para que cuando le doy click en el evento del data grid, fuera de los renglones no me de el error, mejor dicho no me deje
+            if (e.RowIndex >=0)
+            {
+                int celdas = e.RowIndex;//Al index donde le dimos click, (se llama e)
+                //En cada campo, de la tabla, en la variable creada, en la celda de la posición del campo
+                txtNombre.Text = dGridProductos.Rows[celdas].Cells[1].Value.ToString();
+                txtDescripcion.Text = dGridProductos.Rows[celdas].Cells[2].Value.ToString();
+                txtCodiBarra.Text = dGridProductos.Rows[celdas].Cells[3].Value.ToString();
+                txtPrecio.Text = dGridProductos.Rows[celdas].Cells[4].Value.ToString();
+                txtImagen.Text = dGridProductos.Rows[celdas].Cells[5].Value.ToString();
+                this.id = (int)dGridProductos.Rows[celdas].Cells[0].Value;//Convertimos para no tener error de tipos de dato
+                                                                            //Además de esto, esta la usamos, para pasar los datos del producto
+                                                                           //y eliminarlos sin afectar TODOS los datos de la tabla
+            }
         }
         //Daremos funcionalidad a la query
         private void iconPicBoxEdit_Click(object sender, EventArgs e)
@@ -177,7 +152,6 @@ namespace consulta_productos
                 "precio = '" + txtPrecio.Text + "'," +
                 "imagen = '" + txtImagen.Text + "'" +
                 "WHERE id = '" + this.id + "';");
-            MessageBox.Show("PRODUCTO MODIFICADO CON ÉXITO");
             //3.Ejecutamos la conexion
             comando.Connection = con;
             //Ejecutamso el comando
@@ -185,6 +159,8 @@ namespace consulta_productos
             if (res == 1)
             {
                 MessageBox.Show("PRODUCTO MODIFICADO CON ÉXITO");
+
+
             }
             else 
             {
@@ -192,6 +168,8 @@ namespace consulta_productos
             }
             //Cerramos conexión
             con.Close();
+            this.cargarDatos();
+            this.limpiarForm(true);
         }
         private void iconPicBoxDelet_Click(object sender, EventArgs e)
         {
@@ -247,6 +225,70 @@ namespace consulta_productos
                 txtPrecio.Clear();
                 txtImagen.Enabled = false;
                 txtImagen.Clear();
+            }
+        }
+
+        private void dGridProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex>=0)
+
+            {
+
+                //Como deshabilitamos los txt para escribir, los habilitamos con un if 
+                if (txtNombre.Enabled == false &&
+                    txtDescripcion.Enabled == false &&
+                    txtCodiBarra.Enabled == false &&
+                    txtPrecio.Enabled == false &&
+                    txtImagen.Enabled == false)
+                {
+                    //Se habilitan y se limpian. 
+                    this.limpiarForm(true);
+                }
+                int celdas = e.RowIndex;//Al index donde le dimos click, (se llama e)
+                //En cada campo, de la tabla, en la variable creada, en la celda de la posición del campo
+                txtNombre.Text = dGridProductos.Rows[celdas].Cells[1].Value.ToString();
+                txtDescripcion.Text = dGridProductos.Rows[celdas].Cells[2].Value.ToString();
+                txtCodiBarra.Text = dGridProductos.Rows[celdas].Cells[3].Value.ToString();
+                txtPrecio.Text = dGridProductos.Rows[celdas].Cells[4].Value.ToString();
+                txtImagen.Text = dGridProductos.Rows[celdas].Cells[5].Value.ToString();
+                this.id = (int)dGridProductos.Rows[celdas].Cells[0].Value;
+            }
+
+        }
+        private void cargarDatos()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                //Lo que haremos ahora será mostrar la base de datos, lo ordenaremos por pasos. 
+                //Vamos a conectarnos para mostrar los productos que se encuentran en la base de datos. 
+                //1. Conectarse. 
+                con.Open();
+                //2. Creamos el comando SELECT* para poder seleccionar todos los campos de nuestra base de datos
+                comando = new MySqlCommand("SELECT * FROM productos ORDER BY nombre ASC");
+                //3.Asociamos la conexión al comando. 
+                comando.Connection = con;
+                //4.Ejecutamos el comando command con una de sus variantes, (dataread = executeReader())
+                dr = comando.ExecuteReader();
+                //5. Mostramos en el GridView, para ello necesitamos saber si existen datos en los renglones. 
+                if (dr.HasRows)
+                {
+                    dGridProductos.Rows.Clear();
+                    //Leer y mostrar en el data
+                    while (dr.Read())
+                    {
+                        //mostrar cada campo dentro un RENGLON del GridView
+                        dGridProductos.Rows.Add(
+                                dr.GetInt32(0),
+                                dr.GetString(1),
+                                dr.GetString(2),
+                                dr.GetString(3),
+                                dr.GetDouble(4),
+                                dr.GetString(5)
+                            );
+                    }
+                }
+                //6.Cerramos la conexión. 
+                con.Close();
             }
         }
     }

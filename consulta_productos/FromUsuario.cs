@@ -117,17 +117,24 @@ namespace consulta_productos
             con.Open();
             //2.Creamos la querry para actualizar los campos a los que nosotros queremos. 
             comando = new MySqlCommand($"UPDATE usuarios SET nombre = '{txtNombre.Text}',password = '{txtPassword.Text}',correo = '{txtCorreo.Text}', foto = '{txtFoto.Text}' WHERE id = '{this.id}' ");
-            MessageBox.Show("DATOS ACTUALIZADOS CORRECTAMENTE");
             //3.Ejecutamos la conexion
             comando.Connection = con;
             //Ejecutamos el comando
-            comando.ExecuteNonQuery();
+            int res = comando.ExecuteNonQuery();
+            if (res == 1) 
+            {
+                MessageBox.Show("DATOS ACTUALIZADOS CORRECTAMENTE");
+            }
+            else
+            {
+                MessageBox.Show("ERROR AL ACTUALIZAR LOS DATOS");
+            }
             //Cerramos conexión
             con.Close();
             //vamos a limpiar los texto y deshabilitarlos
             this.limpiarForm(false);
             //Recargamos el fform
-            this.FromUsuario_Load_1(sender, e);//Se muestra un objeto.
+            this.cargarUsuarios();
 
         }
         //Método para eliminar usuarios
@@ -150,7 +157,7 @@ namespace consulta_productos
             //vamos a limpiar los texto y deshabilitarlos
             this.limpiarForm(false);
             //Recargamos el fform
-            this.FromUsuario_Load_1(sender, e);//Se muestra un objeto.
+            this.cargarUsuarios();//Se muestra un objeto.
         }
         //Programamos el buscador de usuarios
         private void iconPiBox_Click(object sender, EventArgs e)
@@ -227,36 +234,66 @@ namespace consulta_productos
 
         private void FromUsuario_Load_1(object sender, EventArgs e)
         {
+            this.cargarUsuarios();
+        }
 
-            //Lo que haremos ahora será mostrar la base de datos, lo ordenaremos por pasos. 
-            //Vamos a conectarnos para mostrar los productos que se encuentran en la base de datos. 
-            //1. Conectarse. 
-            con.Open();
-            //2. Creamos el comando SELECT* para poder seleccionar todos los campos de nuestra base de datos
-            comando = new MySqlCommand("SELECT * FROM usuarios ORDER BY nombre ASC");
-            //3.Asociamos la conexión al comando. 
-            comando.Connection = con;
-            //4.Ejecutamos el comando command con una de sus variantes, (dataread = executeReader())
-            dr = comando.ExecuteReader();
-            //5. Mostramos en el GridView, para ello necesitamos saber si existen datos en los renglones. 
-            if (dr.HasRows)
+        private void dGridUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Como deshabilitamos los txt para escribir, los habilitamos con un if 
+            if (txtNombre.Enabled == false &&
+                txtCorreo.Enabled == false &&
+                txtPassword.Enabled == false &&
+                txtConfirmarPassword.Enabled == false &&
+                txtFoto.Enabled == false)
             {
-                dGridUsuarios.Rows.Clear();
-                //Leer y mostrar en el data
-                while (dr.Read())
-                {
-                    //mostrar cada campo dentro un RENGLON del GridView
-                    dGridUsuarios.Rows.Add(
-                            dr.GetInt32(0),
-                            dr.GetString(1),
-                            dr.GetString(3),
-                            dr.GetString(2),
-                            dr.GetString(4)
-                        );
-                }
+                //Se habilitan y se limpian. 
+                this.limpiarForm(true);
             }
-            //6.Cerramos la conexión. 
-            con.Close();
+            int celdas = e.RowIndex;//Al index donde le dimos click, (se llama e)
+            //En cada campo, de la tabla, en la variable creada, en la celda de la posición del campo
+            txtNombre.Text = dGridUsuarios.Rows[celdas].Cells[1].Value.ToString();
+            txtPassword.Text = dGridUsuarios.Rows[celdas].Cells[2].Value.ToString();
+            txtCorreo.Text = dGridUsuarios.Rows[celdas].Cells[3].Value.ToString();
+            txtFoto.Text = dGridUsuarios.Rows[celdas].Cells[4].Value.ToString();
+            this.id = int.Parse((dGridUsuarios.Rows[celdas].Cells[0].Value.ToString()));//Convertimos para no tener error de tipos de dato
+                                                                                        //Además de esto, esta la usamos, para pasar los datos del producto
+                                                                                        //y eliminarlos sin afectar TODOS los datos de la 
+        }
+        private void cargarUsuarios() 
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+
+                //Lo que haremos ahora será mostrar la base de datos, lo ordenaremos por pasos. 
+                //Vamos a conectarnos para mostrar los productos que se encuentran en la base de datos. 
+                //1. Conectarse. 
+                con.Open();
+                //2. Creamos el comando SELECT* para poder seleccionar todos los campos de nuestra base de datos
+                comando = new MySqlCommand("SELECT * FROM usuarios ORDER BY nombre ASC");
+                //3.Asociamos la conexión al comando. 
+                comando.Connection = con;
+                //4.Ejecutamos el comando command con una de sus variantes, (dataread = executeReader())
+                dr = comando.ExecuteReader();
+                //5. Mostramos en el GridView, para ello necesitamos saber si existen datos en los renglones. 
+                if (dr.HasRows)
+                {
+                    dGridUsuarios.Rows.Clear();
+                    //Leer y mostrar en el data
+                    while (dr.Read())
+                    {
+                        //mostrar cada campo dentro un RENGLON del GridView
+                        dGridUsuarios.Rows.Add(
+                                dr.GetInt32(0),
+                                dr.GetString(1),
+                                dr.GetString(3),
+                                dr.GetString(2),
+                                dr.GetString(4)
+                            );
+                    }
+                }
+                //6.Cerramos la conexión. 
+                con.Close();
+            }
         }
     }
 

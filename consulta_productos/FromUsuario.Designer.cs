@@ -414,6 +414,9 @@
             // 
             // dGridUsuarios
             // 
+            this.dGridUsuarios.AllowUserToAddRows = false;
+            this.dGridUsuarios.AllowUserToDeleteRows = false;
+            this.dGridUsuarios.AllowUserToOrderColumns = true;
             this.dGridUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -430,41 +433,48 @@
             this.ColumnFoto});
             this.dGridUsuarios.Location = new System.Drawing.Point(-2, 3);
             this.dGridUsuarios.Name = "dGridUsuarios";
+            this.dGridUsuarios.ReadOnly = true;
             this.dGridUsuarios.RowHeadersWidth = 51;
             this.dGridUsuarios.RowTemplate.Height = 29;
             this.dGridUsuarios.Size = new System.Drawing.Size(970, 185);
             this.dGridUsuarios.TabIndex = 0;
             this.dGridUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridUsuario_CellClick);
+            this.dGridUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridUsuarios_CellContentClick);
             // 
             // Columna_ID
             // 
             this.Columna_ID.HeaderText = "ID";
             this.Columna_ID.MinimumWidth = 6;
             this.Columna_ID.Name = "Columna_ID";
+            this.Columna_ID.ReadOnly = true;
             // 
             // Column_nombre
             // 
             this.Column_nombre.HeaderText = "NOMBRE";
             this.Column_nombre.MinimumWidth = 6;
             this.Column_nombre.Name = "Column_nombre";
+            this.Column_nombre.ReadOnly = true;
             // 
             // CORREO
             // 
             this.CORREO.HeaderText = "CORREO";
             this.CORREO.MinimumWidth = 6;
             this.CORREO.Name = "CORREO";
+            this.CORREO.ReadOnly = true;
             // 
             // ColumPassword
             // 
             this.ColumPassword.HeaderText = "CONTRASEÑA";
             this.ColumPassword.MinimumWidth = 6;
             this.ColumPassword.Name = "ColumPassword";
+            this.ColumPassword.ReadOnly = true;
             // 
             // ColumnFoto
             // 
             this.ColumnFoto.HeaderText = "FOTO";
             this.ColumnFoto.MinimumWidth = 6;
             this.ColumnFoto.Name = "ColumnFoto";
+            this.ColumnFoto.ReadOnly = true;
             // 
             // FromUsuario
             // 

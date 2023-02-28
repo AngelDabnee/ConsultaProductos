@@ -78,10 +78,9 @@ namespace consulta_productos
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(1, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(1, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(864, 406);
+            this.panel1.Size = new System.Drawing.Size(987, 540);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -112,10 +111,9 @@ namespace consulta_productos
             this.panel3.Controls.Add(this.iconPiBox);
             this.panel3.Controls.Add(this.txtBuscador);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(3, 6);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(3, 8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(859, 253);
+            this.panel3.Size = new System.Drawing.Size(981, 336);
             this.panel3.TabIndex = 1;
             // 
             // iconPictureBox1
@@ -126,11 +124,10 @@ namespace consulta_productos
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Dollar;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 23;
-            this.iconPictureBox1.Location = new System.Drawing.Point(699, 109);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconPictureBox1.IconSize = 29;
+            this.iconPictureBox1.Location = new System.Drawing.Point(799, 145);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(29, 23);
+            this.iconPictureBox1.Size = new System.Drawing.Size(33, 29);
             this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.iconPictureBox1.TabIndex = 24;
             this.iconPictureBox1.TabStop = false;
@@ -139,9 +136,9 @@ namespace consulta_productos
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(698, 208);
+            this.label6.Location = new System.Drawing.Point(798, 277);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 23);
+            this.label6.Size = new System.Drawing.Size(124, 28);
             this.label6.TabIndex = 23;
             this.label6.Text = "GUARDAR";
             // 
@@ -152,9 +149,11 @@ namespace consulta_productos
             this.iconPicBoxSave.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
             this.iconPicBoxSave.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPicBoxSave.Location = new System.Drawing.Point(661, 208);
+            this.iconPicBoxSave.IconSize = 37;
+            this.iconPicBoxSave.Location = new System.Drawing.Point(755, 277);
+            this.iconPicBoxSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxSave.Name = "iconPicBoxSave";
-            this.iconPicBoxSave.Size = new System.Drawing.Size(32, 32);
+            this.iconPicBoxSave.Size = new System.Drawing.Size(37, 43);
             this.iconPicBoxSave.TabIndex = 22;
             this.iconPicBoxSave.TabStop = false;
             this.iconPicBoxSave.Click += new System.EventHandler(this.iconPicBoxSave_Click);
@@ -163,9 +162,9 @@ namespace consulta_productos
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(698, 175);
+            this.label5.Location = new System.Drawing.Point(798, 233);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 23);
+            this.label5.Size = new System.Drawing.Size(109, 28);
             this.label5.TabIndex = 21;
             this.label5.Text = "BORRAR";
             // 
@@ -173,9 +172,9 @@ namespace consulta_productos
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(564, 212);
+            this.label4.Location = new System.Drawing.Point(645, 283);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 23);
+            this.label4.Size = new System.Drawing.Size(95, 28);
             this.label4.TabIndex = 20;
             this.label4.Text = "EDITAR";
             // 
@@ -183,9 +182,9 @@ namespace consulta_productos
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(562, 176);
+            this.label3.Location = new System.Drawing.Point(642, 235);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 23);
+            this.label3.Size = new System.Drawing.Size(101, 28);
             this.label3.TabIndex = 19;
             this.label3.Text = "AÑADIR";
             // 
@@ -197,9 +196,11 @@ namespace consulta_productos
             this.iconPicBoxDelet.IconChar = FontAwesome.Sharp.IconChar.Eraser;
             this.iconPicBoxDelet.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxDelet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPicBoxDelet.Location = new System.Drawing.Point(661, 170);
+            this.iconPicBoxDelet.IconSize = 37;
+            this.iconPicBoxDelet.Location = new System.Drawing.Point(755, 227);
+            this.iconPicBoxDelet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxDelet.Name = "iconPicBoxDelet";
-            this.iconPicBoxDelet.Size = new System.Drawing.Size(32, 32);
+            this.iconPicBoxDelet.Size = new System.Drawing.Size(37, 43);
             this.iconPicBoxDelet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPicBoxDelet.TabIndex = 18;
             this.iconPicBoxDelet.TabStop = false;
@@ -212,9 +213,11 @@ namespace consulta_productos
             this.iconPicBoxEdit.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.iconPicBoxEdit.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPicBoxEdit.Location = new System.Drawing.Point(521, 208);
+            this.iconPicBoxEdit.IconSize = 37;
+            this.iconPicBoxEdit.Location = new System.Drawing.Point(595, 277);
+            this.iconPicBoxEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxEdit.Name = "iconPicBoxEdit";
-            this.iconPicBoxEdit.Size = new System.Drawing.Size(32, 32);
+            this.iconPicBoxEdit.Size = new System.Drawing.Size(37, 43);
             this.iconPicBoxEdit.TabIndex = 17;
             this.iconPicBoxEdit.TabStop = false;
             this.iconPicBoxEdit.Click += new System.EventHandler(this.iconPicBoxEdit_Click);
@@ -227,9 +230,11 @@ namespace consulta_productos
             this.iconPicBoxNew.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.iconPicBoxNew.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPicBoxNew.Location = new System.Drawing.Point(521, 168);
+            this.iconPicBoxNew.IconSize = 37;
+            this.iconPicBoxNew.Location = new System.Drawing.Point(595, 224);
+            this.iconPicBoxNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxNew.Name = "iconPicBoxNew";
-            this.iconPicBoxNew.Size = new System.Drawing.Size(32, 32);
+            this.iconPicBoxNew.Size = new System.Drawing.Size(37, 43);
             this.iconPicBoxNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPicBoxNew.TabIndex = 16;
             this.iconPicBoxNew.TabStop = false;
@@ -239,59 +244,54 @@ namespace consulta_productos
             // 
             this.txtPrecio.Enabled = false;
             this.txtPrecio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPrecio.Location = new System.Drawing.Point(728, 108);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPrecio.Location = new System.Drawing.Point(832, 144);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(115, 26);
+            this.txtPrecio.Size = new System.Drawing.Size(131, 30);
             this.txtPrecio.TabIndex = 13;
             // 
             // txtCodiBarra
             // 
             this.txtCodiBarra.Enabled = false;
             this.txtCodiBarra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCodiBarra.Location = new System.Drawing.Point(699, 75);
-            this.txtCodiBarra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCodiBarra.Location = new System.Drawing.Point(799, 100);
             this.txtCodiBarra.Name = "txtCodiBarra";
-            this.txtCodiBarra.Size = new System.Drawing.Size(144, 26);
+            this.txtCodiBarra.Size = new System.Drawing.Size(164, 30);
             this.txtCodiBarra.TabIndex = 12;
             // 
             // txtImagen
             // 
             this.txtImagen.Enabled = false;
             this.txtImagen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtImagen.Location = new System.Drawing.Point(148, 141);
-            this.txtImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtImagen.Location = new System.Drawing.Point(169, 188);
             this.txtImagen.Name = "txtImagen";
-            this.txtImagen.Size = new System.Drawing.Size(347, 26);
+            this.txtImagen.Size = new System.Drawing.Size(396, 30);
             this.txtImagen.TabIndex = 11;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescripcion.Location = new System.Drawing.Point(150, 108);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescripcion.Location = new System.Drawing.Point(171, 144);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(347, 26);
+            this.txtDescripcion.Size = new System.Drawing.Size(396, 30);
             this.txtDescripcion.TabIndex = 10;
             // 
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombre.Location = new System.Drawing.Point(150, 75);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Location = new System.Drawing.Point(171, 100);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(347, 26);
+            this.txtNombre.Size = new System.Drawing.Size(396, 30);
             this.txtNombre.TabIndex = 9;
             // 
             // lbImagen
             // 
             this.lbImagen.AutoSize = true;
             this.lbImagen.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbImagen.Location = new System.Drawing.Point(4, 141);
+            this.lbImagen.Location = new System.Drawing.Point(5, 188);
             this.lbImagen.Name = "lbImagen";
-            this.lbImagen.Size = new System.Drawing.Size(81, 23);
+            this.lbImagen.Size = new System.Drawing.Size(103, 28);
             this.lbImagen.TabIndex = 8;
             this.lbImagen.Text = "IMAGEN";
             // 
@@ -299,9 +299,9 @@ namespace consulta_productos
             // 
             this.lbPrecio.AutoSize = true;
             this.lbPrecio.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbPrecio.Location = new System.Drawing.Point(507, 108);
+            this.lbPrecio.Location = new System.Drawing.Point(579, 144);
             this.lbPrecio.Name = "lbPrecio";
-            this.lbPrecio.Size = new System.Drawing.Size(77, 23);
+            this.lbPrecio.Size = new System.Drawing.Size(97, 28);
             this.lbPrecio.TabIndex = 7;
             this.lbPrecio.Text = "PRECIO";
             // 
@@ -309,9 +309,9 @@ namespace consulta_productos
             // 
             this.lbCodiBarra.AutoSize = true;
             this.lbCodiBarra.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbCodiBarra.Location = new System.Drawing.Point(503, 76);
+            this.lbCodiBarra.Location = new System.Drawing.Point(575, 101);
             this.lbCodiBarra.Name = "lbCodiBarra";
-            this.lbCodiBarra.Size = new System.Drawing.Size(173, 23);
+            this.lbCodiBarra.Size = new System.Drawing.Size(227, 28);
             this.lbCodiBarra.TabIndex = 6;
             this.lbCodiBarra.Text = "CODIGO DE BARRA";
             // 
@@ -319,9 +319,9 @@ namespace consulta_productos
             // 
             this.lbDescripcion.AutoSize = true;
             this.lbDescripcion.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbDescripcion.Location = new System.Drawing.Point(4, 108);
+            this.lbDescripcion.Location = new System.Drawing.Point(5, 144);
             this.lbDescripcion.Name = "lbDescripcion";
-            this.lbDescripcion.Size = new System.Drawing.Size(132, 23);
+            this.lbDescripcion.Size = new System.Drawing.Size(168, 28);
             this.lbDescripcion.TabIndex = 5;
             this.lbDescripcion.Text = "DESCRIPCIÓN";
             // 
@@ -329,9 +329,9 @@ namespace consulta_productos
             // 
             this.lbnombre.AutoSize = true;
             this.lbnombre.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbnombre.Location = new System.Drawing.Point(4, 75);
+            this.lbnombre.Location = new System.Drawing.Point(5, 100);
             this.lbnombre.Name = "lbnombre";
-            this.lbnombre.Size = new System.Drawing.Size(108, 23);
+            this.lbnombre.Size = new System.Drawing.Size(138, 28);
             this.lbnombre.TabIndex = 3;
             this.lbnombre.Text = "PRODUCTO";
             // 
@@ -343,11 +343,10 @@ namespace consulta_productos
             this.iconPiBox.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
             this.iconPiBox.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPiBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPiBox.IconSize = 31;
-            this.iconPiBox.Location = new System.Drawing.Point(802, 32);
-            this.iconPiBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconPiBox.IconSize = 40;
+            this.iconPiBox.Location = new System.Drawing.Point(917, 43);
             this.iconPiBox.Name = "iconPiBox";
-            this.iconPiBox.Size = new System.Drawing.Size(42, 31);
+            this.iconPiBox.Size = new System.Drawing.Size(47, 40);
             this.iconPiBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.iconPiBox.TabIndex = 2;
             this.iconPiBox.TabStop = false;
@@ -356,10 +355,9 @@ namespace consulta_productos
             // txtBuscador
             // 
             this.txtBuscador.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBuscador.Location = new System.Drawing.Point(4, 36);
-            this.txtBuscador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscador.Location = new System.Drawing.Point(5, 48);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(791, 26);
+            this.txtBuscador.Size = new System.Drawing.Size(903, 30);
             this.txtBuscador.TabIndex = 1;
             this.txtBuscador.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -367,9 +365,9 @@ namespace consulta_productos
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(290, 6);
+            this.label1.Location = new System.Drawing.Point(331, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 23);
+            this.label1.Size = new System.Drawing.Size(253, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "ALTA DE PRODUCTOS";
             // 
@@ -377,14 +375,16 @@ namespace consulta_productos
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.dGridProductos);
-            this.panel2.Location = new System.Drawing.Point(3, 263);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(3, 260);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(854, 101);
+            this.panel2.Size = new System.Drawing.Size(975, 224);
             this.panel2.TabIndex = 0;
             // 
             // dGridProductos
             // 
+            this.dGridProductos.AllowUserToAddRows = false;
+            this.dGridProductos.AllowUserToDeleteRows = false;
+            this.dGridProductos.AllowUserToOrderColumns = true;
             this.dGridProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -400,58 +400,64 @@ namespace consulta_productos
             this.ColumnCodigo_Barras,
             this.ColumnPrecio,
             this.ColumnImagen});
-            this.dGridProductos.Location = new System.Drawing.Point(-2, 2);
-            this.dGridProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dGridProductos.Location = new System.Drawing.Point(3, 88);
             this.dGridProductos.Name = "dGridProductos";
+            this.dGridProductos.ReadOnly = true;
             this.dGridProductos.RowHeadersWidth = 51;
             this.dGridProductos.RowTemplate.Height = 29;
-            this.dGridProductos.Size = new System.Drawing.Size(854, 97);
+            this.dGridProductos.Size = new System.Drawing.Size(965, 131);
             this.dGridProductos.TabIndex = 0;
             this.dGridProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridProductos_CellClick);
+            this.dGridProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridProductos_CellContentClick);
             // 
             // Columna_ID
             // 
             this.Columna_ID.HeaderText = "ID";
             this.Columna_ID.MinimumWidth = 6;
             this.Columna_ID.Name = "Columna_ID";
+            this.Columna_ID.ReadOnly = true;
             // 
             // Column_nombre
             // 
             this.Column_nombre.HeaderText = "NOMBRE";
             this.Column_nombre.MinimumWidth = 6;
             this.Column_nombre.Name = "Column_nombre";
+            this.Column_nombre.ReadOnly = true;
             // 
             // ColumnDESCRIPCION
             // 
             this.ColumnDESCRIPCION.HeaderText = "DESCRIPCIÓN";
             this.ColumnDESCRIPCION.MinimumWidth = 6;
             this.ColumnDESCRIPCION.Name = "ColumnDESCRIPCION";
+            this.ColumnDESCRIPCION.ReadOnly = true;
             // 
             // ColumnCodigo_Barras
             // 
             this.ColumnCodigo_Barras.HeaderText = "CÓDIGO DE BARRA";
             this.ColumnCodigo_Barras.MinimumWidth = 6;
             this.ColumnCodigo_Barras.Name = "ColumnCodigo_Barras";
+            this.ColumnCodigo_Barras.ReadOnly = true;
             // 
             // ColumnPrecio
             // 
             this.ColumnPrecio.HeaderText = "PRECIO";
             this.ColumnPrecio.MinimumWidth = 6;
             this.ColumnPrecio.Name = "ColumnPrecio";
+            this.ColumnPrecio.ReadOnly = true;
             // 
             // ColumnImagen
             // 
             this.ColumnImagen.HeaderText = "IMAGEN";
             this.ColumnImagen.MinimumWidth = 6;
             this.ColumnImagen.Name = "ColumnImagen";
+            this.ColumnImagen.ReadOnly = true;
             // 
             // FromCRUD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 369);
+            this.ClientSize = new System.Drawing.Size(1002, 492);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FromCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
