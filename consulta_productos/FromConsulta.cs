@@ -100,5 +100,11 @@ namespace consulta_productos
                 con.Close();
             }
         }
+
+        private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form cerrar = new FromConsulta();
+            this.Close();
+        }
     }
 }

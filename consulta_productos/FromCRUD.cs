@@ -1,9 +1,12 @@
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using Mysqlx.Resultset;
 using System.Data;
 using System.Diagnostics.Metrics;
-using System.Windows.Controls;
+using System.Drawing;
+using System.IO;
 
+//using System.Windows.Controls;
 namespace consulta_productos
 {
     public partial class FromCRUD : Form
@@ -15,8 +18,9 @@ namespace consulta_productos
         MySqlDataReader dr;//Para que pueda leer lo que tenemos en el txt. 
         int id = 0; //La utilizaremos para guardar los datos del datagrid y eliminarlos con el delete en la querry correspondiente.
                     //esta variable también funciona en modificar ya que, vamos a señalar en donde queremos modificar dependiendo del id
-        bool edit;
-         public FromCRUD()
+        
+
+        public FromCRUD()
         {
             InitializeComponent();
         }
@@ -48,12 +52,13 @@ namespace consulta_productos
                     var mystring = dr.GetString(0);
                     //id-nombre-codigobarra-descipcion-precio-imagen
                     // 0    1        2           3        4      5
-                    dGridProductos.Rows.Add(new object[] {dr.GetInt16(0),
-                                                          dr.GetString(1),
-                                                          dr.GetString(2),
-                                                          dr.GetString(3),
-                                                          dr.GetDouble(4),
-                                                          dr.GetString(5) });//Con esto definimos las filas de nuestra tabla, según las características de esta
+                    dGridProductos.Rows.Add(new object[] {dr.GetInt16("id"),
+                                                          dr.GetString("nombre"),
+                                                          dr.GetString("codigo_barras"),
+                                                          dr.GetString("descripcion"),
+                                                          dr.GetDouble("precio"),
+                                                          dr.GetString("imagen") });//Con esto definimos las filas de nuestra tabla, según las características de esta
+
                 }
 
             }
@@ -72,8 +77,7 @@ namespace consulta_productos
             if (txtNombre.Enabled == false &&
                 txtDescripcion.Enabled == false &&
                 txtCodiBarra.Enabled == false &&
-                txtPrecio.Enabled == false &&
-                txtImagen.Enabled == false)
+                txtPrecio.Enabled == false)
             {
                 //Se habilitan y se limpian. 
                 this.limpiarForm(true);
@@ -82,6 +86,7 @@ namespace consulta_productos
         //Comenzamos con la edición del boton para guardar. 
         private void iconPicBoxSave_Click(object sender, EventArgs e)
         {
+            
             //1. Nos conectamos. 
             con.Open();
             //2.Crear el comando insert de la base de datos. 
@@ -97,6 +102,10 @@ namespace consulta_productos
             {
                 //msg OK
                 MessageBox.Show("PRODUCTO CAPTURADO CON ÉXITO");
+                if (pictureBoxFoto.Image != null)
+                {
+                    pictureBoxFoto.Image.Save("..\\..\\..\\imagenesConsultaProducto\\" + txtImagen.Text);
+                }
             }
             else
             {
@@ -104,6 +113,7 @@ namespace consulta_productos
                 MessageBox.Show("ERROR EN LA CAPTURA");
             }
             //5- cerrar CONEXION
+
             con.Close();
             //vamos a limpiar los texto y deshabilitarlos
             this.limpiarForm(false);
@@ -125,8 +135,9 @@ namespace consulta_productos
         private void dGridProductos_CellClick(object sender, DataGridViewCellEventArgs e)//El evento se llama e
         {
             //Este rowIndex, es para que cuando le doy click en el evento del data grid, fuera de los renglones no me de el error, mejor dicho no me deje
-            if (e.RowIndex >=0)
+            if (e.RowIndex >= 0)
             {
+                
                 int celdas = e.RowIndex;//Al index donde le dimos click, (se llama e)
                 //En cada campo, de la tabla, en la variable creada, en la celda de la posición del campo
                 txtNombre.Text = dGridProductos.Rows[celdas].Cells[1].Value.ToString();
@@ -134,14 +145,17 @@ namespace consulta_productos
                 txtCodiBarra.Text = dGridProductos.Rows[celdas].Cells[3].Value.ToString();
                 txtPrecio.Text = dGridProductos.Rows[celdas].Cells[4].Value.ToString();
                 txtImagen.Text = dGridProductos.Rows[celdas].Cells[5].Value.ToString();
+                pictureBoxFoto.ImageLocation = "..\\..\\..\\imagenesConsultaProducto\\" + txtImagen.Text;//Con esto me mostrará la imagen en el picture box dependiendo de la ruta
                 this.id = (int)dGridProductos.Rows[celdas].Cells[0].Value;//Convertimos para no tener error de tipos de dato
-                                                                            //Además de esto, esta la usamos, para pasar los datos del producto
-                                                                           //y eliminarlos sin afectar TODOS los datos de la tabla
+                                                                          //Además de esto, esta la usamos, para pasar los datos del producto
+                                                                          //y eliminarlos sin afectar TODOS los datos de la tabla
+           
             }
         }
         //Daremos funcionalidad a la query
         private void iconPicBoxEdit_Click(object sender, EventArgs e)
         {
+            
             //1.Conectarse
             con.Open();
             //2.Creamos la querry para actualizar los campos a los que nosotros queremos. 
@@ -159,17 +173,20 @@ namespace consulta_productos
             if (res == 1)
             {
                 MessageBox.Show("PRODUCTO MODIFICADO CON ÉXITO");
-
-
+                if (pictureBoxFoto.Image != null)
+                {
+                    File.Delete("..\\..\\..\\imagenesConsultaProducto\\" + txtImagen.Text);
+                    pictureBoxFoto.Image.Save("..\\..\\..\\imagenesConsultaProducto\\" + txtImagen.Text);
+                }
             }
-            else 
+            else
             {
                 MessageBox.Show("ERROR AL MODIFICAR");
             }
             //Cerramos conexión
             con.Close();
-            this.cargarDatos();
             this.limpiarForm(true);
+            this.cargarDatos();
         }
         private void iconPicBoxDelet_Click(object sender, EventArgs e)
         {
@@ -181,18 +198,28 @@ namespace consulta_productos
             //3. Ejecutamos la conexión
             comando.Connection = con;
             //4.Usamos el comando necesario
-            comando.ExecuteNonQuery();
+            int res = comando.ExecuteNonQuery();
             //BORRAR
-            try
-            {   //Aquí, estamos intentando eliminar los productos en el renglon donde está, con el index es el valor que tiene
-                dGridProductos.Rows.RemoveAt(this.dGridProductos.CurrentRow.Index);
-                MessageBox.Show("PRODUCTO ELIMINADO CON ÉXITO");
-            }
-            catch //Si llegasemos a tener una falla al eliminar el producto
+            if (res == 1)
             {
-                MessageBox.Show("ERROR AL ELIMINAR EL PRODUCTO");
+                try
+                {   //Aquí, estamos intentando eliminar los productos en el renglon donde está, con el index es el valor que tiene
+                    dGridProductos.Rows.RemoveAt(this.dGridProductos.CurrentRow.Index);
+                    MessageBox.Show("PRODUCTO ELIMINADO CON ÉXITO");
+                    if (pictureBoxFoto.Image != null)
+                    {
+                        File.Delete("..\\..\\..\\imagenesConsultaProducto\\" + txtImagen.Text);
+                    }
+                }
+                catch //Si llegasemos a tener una falla al eliminar el producto
+                {
+                    MessageBox.Show("ERROR AL ELIMINAR EL PRODUCTO");
+                }
             }
+            //cerramos la conexión
             con.Close();
+            //Limpiamos el txt
+            this.limpiarForm(false);
             //Recargamos el fform
             this.FromCRUD_Load(sender, e);//Se muestra un objeto. 
         }
@@ -209,7 +236,6 @@ namespace consulta_productos
                 txtCodiBarra.Clear();
                 txtPrecio.Enabled = true;
                 txtPrecio.Clear();
-                txtImagen.Enabled = true;
                 txtImagen.Clear();
             }
             else
@@ -223,37 +249,8 @@ namespace consulta_productos
                 txtCodiBarra.Clear();
                 txtPrecio.Enabled = false;
                 txtPrecio.Clear();
-                txtImagen.Enabled = false;
                 txtImagen.Clear();
             }
-        }
-
-        private void dGridProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex>=0)
-
-            {
-
-                //Como deshabilitamos los txt para escribir, los habilitamos con un if 
-                if (txtNombre.Enabled == false &&
-                    txtDescripcion.Enabled == false &&
-                    txtCodiBarra.Enabled == false &&
-                    txtPrecio.Enabled == false &&
-                    txtImagen.Enabled == false)
-                {
-                    //Se habilitan y se limpian. 
-                    this.limpiarForm(true);
-                }
-                int celdas = e.RowIndex;//Al index donde le dimos click, (se llama e)
-                //En cada campo, de la tabla, en la variable creada, en la celda de la posición del campo
-                txtNombre.Text = dGridProductos.Rows[celdas].Cells[1].Value.ToString();
-                txtDescripcion.Text = dGridProductos.Rows[celdas].Cells[2].Value.ToString();
-                txtCodiBarra.Text = dGridProductos.Rows[celdas].Cells[3].Value.ToString();
-                txtPrecio.Text = dGridProductos.Rows[celdas].Cells[4].Value.ToString();
-                txtImagen.Text = dGridProductos.Rows[celdas].Cells[5].Value.ToString();
-                this.id = (int)dGridProductos.Rows[celdas].Cells[0].Value;
-            }
-
         }
         private void cargarDatos()
         {
@@ -278,18 +275,40 @@ namespace consulta_productos
                     {
                         //mostrar cada campo dentro un RENGLON del GridView
                         dGridProductos.Rows.Add(
-                                dr.GetInt32(0),
-                                dr.GetString(1),
-                                dr.GetString(2),
-                                dr.GetString(3),
-                                dr.GetDouble(4),
-                                dr.GetString(5)
+                                dr.GetInt32("id"),
+                                dr.GetString("nombre"),
+                                dr.GetString("codigo_barras"),
+                                dr.GetString("descripcion"),
+                                dr.GetDouble("precio"),
+                                dr.GetString("imagen")
                             );
                     }
                 }
                 //6.Cerramos la conexión. 
                 con.Close();
             }
+        }
+        //Con este hacemos que se nos muestre el dialogo para poder usarlo
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult res = openDialogProtImagen.ShowDialog();
+            //cargar el archivo
+            if (res == DialogResult.OK)
+            {
+                pictureBoxFoto.Image = new Bitmap(openDialogProtImagen.FileName);
+                //crear un nombre unico
+                DateTime dtNombre = DateTime.Now;
+                string nombreImg = "prod_" + dtNombre.Ticks + ".png";
+                txtImagen.Text = nombreImg;
+            }
+            //por si le da click en cerrar. 
+            else { }
+        }
+        //método para guardar la imagen. 
+        private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form cerrar = new FromCRUD();
+            this.Close();
         }
     }
 }

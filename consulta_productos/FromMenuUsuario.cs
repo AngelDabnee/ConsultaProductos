@@ -28,5 +28,11 @@ namespace consulta_productos
             Form fromConsulta = new FromConsulta();
             fromConsulta.Show();
         }
+
+        private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form cerrar = new FromMenuUsuario();
+            this.Close();
+        }
     }
 }

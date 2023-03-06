@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dGridUsuarios = new System.Windows.Forms.DataGridView();
+            this.Columna_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CORREO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFoto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
+            this.buttonFoto = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.iconPictureBoxNotShow = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBoxShow = new FontAwesome.Sharp.IconPictureBox();
@@ -54,14 +63,15 @@
             this.iconPiBox = new FontAwesome.Sharp.IconPictureBox();
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dGridUsuarios = new System.Windows.Forms.DataGridView();
-            this.Columna_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CORREO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFoto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openDialogFoto1 = new System.Windows.Forms.OpenFileDialog();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxNotShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAdd)).BeginInit();
@@ -69,16 +79,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPicBoxDelet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPicBoxEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPiBox)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridUsuarios)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel3.BackgroundImage = global::consulta_productos.Properties.Resources.fondo_usuario;
+            this.panel3.BackgroundImage = global::consulta_productos.Properties.Resources.spiderman_fondo_crud;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.pictureBoxFoto);
+            this.panel3.Controls.Add(this.buttonFoto);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.iconPictureBoxNotShow);
             this.panel3.Controls.Add(this.iconPictureBoxShow);
@@ -104,11 +116,106 @@
             this.panel3.Controls.Add(this.iconPiBox);
             this.panel3.Controls.Add(this.txtBuscador);
             this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.menuStrip1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1061, 564);
+            this.panel3.Size = new System.Drawing.Size(1049, 468);
             this.panel3.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.dGridUsuarios);
+            this.panel2.Location = new System.Drawing.Point(5, 336);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(761, 123);
+            this.panel2.TabIndex = 3;
+            // 
+            // dGridUsuarios
+            // 
+            this.dGridUsuarios.AllowUserToAddRows = false;
+            this.dGridUsuarios.AllowUserToDeleteRows = false;
+            this.dGridUsuarios.AllowUserToOrderColumns = true;
+            this.dGridUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dGridUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGridUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dGridUsuarios.BackgroundColor = System.Drawing.Color.Silver;
+            this.dGridUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dGridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Columna_ID,
+            this.Column_nombre,
+            this.CORREO,
+            this.ColumPassword,
+            this.ColumnFoto});
+            this.dGridUsuarios.Location = new System.Drawing.Point(-2, 3);
+            this.dGridUsuarios.Name = "dGridUsuarios";
+            this.dGridUsuarios.ReadOnly = true;
+            this.dGridUsuarios.RowHeadersWidth = 51;
+            this.dGridUsuarios.RowTemplate.Height = 29;
+            this.dGridUsuarios.Size = new System.Drawing.Size(755, 105);
+            this.dGridUsuarios.TabIndex = 0;
+            this.dGridUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridUsuario_CellClick);
+            this.dGridUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridUsuarios_CellContentClick);
+            // 
+            // Columna_ID
+            // 
+            this.Columna_ID.HeaderText = "ID";
+            this.Columna_ID.MinimumWidth = 6;
+            this.Columna_ID.Name = "Columna_ID";
+            this.Columna_ID.ReadOnly = true;
+            // 
+            // Column_nombre
+            // 
+            this.Column_nombre.HeaderText = "NOMBRE";
+            this.Column_nombre.MinimumWidth = 6;
+            this.Column_nombre.Name = "Column_nombre";
+            this.Column_nombre.ReadOnly = true;
+            // 
+            // CORREO
+            // 
+            this.CORREO.HeaderText = "CORREO";
+            this.CORREO.MinimumWidth = 6;
+            this.CORREO.Name = "CORREO";
+            this.CORREO.ReadOnly = true;
+            // 
+            // ColumPassword
+            // 
+            this.ColumPassword.HeaderText = "CONTRASEÑA";
+            this.ColumPassword.MinimumWidth = 6;
+            this.ColumPassword.Name = "ColumPassword";
+            this.ColumPassword.ReadOnly = true;
+            // 
+            // ColumnFoto
+            // 
+            this.ColumnFoto.HeaderText = "FOTO";
+            this.ColumnFoto.MinimumWidth = 6;
+            this.ColumnFoto.Name = "ColumnFoto";
+            this.ColumnFoto.ReadOnly = true;
+            // 
+            // pictureBoxFoto
+            // 
+            this.pictureBoxFoto.Location = new System.Drawing.Point(802, 79);
+            this.pictureBoxFoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBoxFoto.Name = "pictureBoxFoto";
+            this.pictureBoxFoto.Size = new System.Drawing.Size(149, 167);
+            this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFoto.TabIndex = 30;
+            this.pictureBoxFoto.TabStop = false;
+            // 
+            // buttonFoto
+            // 
+            this.buttonFoto.Location = new System.Drawing.Point(831, 253);
+            this.buttonFoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonFoto.Name = "buttonFoto";
+            this.buttonFoto.Size = new System.Drawing.Size(86, 31);
+            this.buttonFoto.TabIndex = 29;
+            this.buttonFoto.Text = "EXAMINAR";
+            this.buttonFoto.UseVisualStyleBackColor = true;
+            this.buttonFoto.Click += new System.EventHandler(this.buttonFoto_Click);
             // 
             // label7
             // 
@@ -172,7 +279,7 @@
             this.iconPictureBoxAdd.IconColor = System.Drawing.Color.Black;
             this.iconPictureBoxAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxAdd.IconSize = 37;
-            this.iconPictureBoxAdd.Location = new System.Drawing.Point(646, 224);
+            this.iconPictureBoxAdd.Location = new System.Drawing.Point(37, 281);
             this.iconPictureBoxAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPictureBoxAdd.Name = "iconPictureBoxAdd";
             this.iconPictureBoxAdd.Size = new System.Drawing.Size(37, 43);
@@ -183,8 +290,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(914, 280);
+            this.label6.Location = new System.Drawing.Point(672, 288);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 28);
             this.label6.TabIndex = 23;
@@ -198,7 +306,7 @@
             this.iconPicBoxSave.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPicBoxSave.IconSize = 37;
-            this.iconPicBoxSave.Location = new System.Drawing.Point(871, 274);
+            this.iconPicBoxSave.Location = new System.Drawing.Point(614, 281);
             this.iconPicBoxSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxSave.Name = "iconPicBoxSave";
             this.iconPicBoxSave.Size = new System.Drawing.Size(37, 43);
@@ -209,8 +317,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(914, 230);
+            this.label5.Location = new System.Drawing.Point(489, 288);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 28);
             this.label5.TabIndex = 21;
@@ -219,8 +328,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(695, 281);
+            this.label4.Location = new System.Drawing.Point(262, 288);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 28);
             this.label4.TabIndex = 20;
@@ -229,8 +339,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(693, 233);
+            this.label3.Location = new System.Drawing.Point(80, 287);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 28);
             this.label3.TabIndex = 19;
@@ -245,7 +356,7 @@
             this.iconPicBoxDelet.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxDelet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPicBoxDelet.IconSize = 37;
-            this.iconPicBoxDelet.Location = new System.Drawing.Point(871, 224);
+            this.iconPicBoxDelet.Location = new System.Drawing.Point(438, 288);
             this.iconPicBoxDelet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxDelet.Name = "iconPicBoxDelet";
             this.iconPicBoxDelet.Size = new System.Drawing.Size(37, 43);
@@ -262,7 +373,7 @@
             this.iconPicBoxEdit.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPicBoxEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPicBoxEdit.IconSize = 37;
-            this.iconPicBoxEdit.Location = new System.Drawing.Point(646, 275);
+            this.iconPicBoxEdit.Location = new System.Drawing.Point(213, 281);
             this.iconPicBoxEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPicBoxEdit.Name = "iconPicBoxEdit";
             this.iconPicBoxEdit.Size = new System.Drawing.Size(37, 43);
@@ -274,7 +385,7 @@
             // 
             this.txtFoto.Enabled = false;
             this.txtFoto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFoto.Location = new System.Drawing.Point(729, 123);
+            this.txtFoto.Location = new System.Drawing.Point(812, 287);
             this.txtFoto.Name = "txtFoto";
             this.txtFoto.Size = new System.Drawing.Size(131, 30);
             this.txtFoto.TabIndex = 13;
@@ -304,7 +415,7 @@
             // 
             this.txtCorreo.Enabled = false;
             this.txtCorreo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCorreo.Location = new System.Drawing.Point(177, 144);
+            this.txtCorreo.Location = new System.Drawing.Point(177, 148);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(396, 30);
             this.txtCorreo.TabIndex = 10;
@@ -313,7 +424,7 @@
             // 
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombre.Location = new System.Drawing.Point(177, 100);
+            this.txtNombre.Location = new System.Drawing.Point(177, 108);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(396, 30);
             this.txtNombre.TabIndex = 9;
@@ -321,6 +432,7 @@
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
+            this.lbPassword.BackColor = System.Drawing.Color.Transparent;
             this.lbPassword.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbPassword.Location = new System.Drawing.Point(5, 188);
             this.lbPassword.Name = "lbPassword";
@@ -331,8 +443,9 @@
             // lbFoto
             // 
             this.lbFoto.AutoSize = true;
+            this.lbFoto.BackColor = System.Drawing.Color.Transparent;
             this.lbFoto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbFoto.Location = new System.Drawing.Point(755, 91);
+            this.lbFoto.Location = new System.Drawing.Point(842, 41);
             this.lbFoto.Name = "lbFoto";
             this.lbFoto.Size = new System.Drawing.Size(71, 28);
             this.lbFoto.TabIndex = 7;
@@ -341,6 +454,7 @@
             // lbConfirmar
             // 
             this.lbConfirmar.AutoSize = true;
+            this.lbConfirmar.BackColor = System.Drawing.Color.Transparent;
             this.lbConfirmar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbConfirmar.Location = new System.Drawing.Point(5, 233);
             this.lbConfirmar.Name = "lbConfirmar";
@@ -351,8 +465,9 @@
             // lbCorreo
             // 
             this.lbCorreo.AutoSize = true;
+            this.lbCorreo.BackColor = System.Drawing.Color.Transparent;
             this.lbCorreo.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbCorreo.Location = new System.Drawing.Point(5, 144);
+            this.lbCorreo.Location = new System.Drawing.Point(5, 151);
             this.lbCorreo.Name = "lbCorreo";
             this.lbCorreo.Size = new System.Drawing.Size(108, 28);
             this.lbCorreo.TabIndex = 5;
@@ -361,8 +476,9 @@
             // lbnombre
             // 
             this.lbnombre.AutoSize = true;
+            this.lbnombre.BackColor = System.Drawing.Color.Transparent;
             this.lbnombre.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbnombre.Location = new System.Drawing.Point(5, 100);
+            this.lbnombre.Location = new System.Drawing.Point(3, 111);
             this.lbnombre.Name = "lbnombre";
             this.lbnombre.Size = new System.Drawing.Size(111, 28);
             this.lbnombre.TabIndex = 3;
@@ -370,16 +486,15 @@
             // 
             // iconPiBox
             // 
-            this.iconPiBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.iconPiBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.iconPiBox.BackColor = System.Drawing.Color.Transparent;
             this.iconPiBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPiBox.IconChar = FontAwesome.Sharp.IconChar.Sistrix;
             this.iconPiBox.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPiBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPiBox.IconSize = 40;
-            this.iconPiBox.Location = new System.Drawing.Point(917, 43);
+            this.iconPiBox.IconSize = 41;
+            this.iconPiBox.Location = new System.Drawing.Point(37, 64);
             this.iconPiBox.Name = "iconPiBox";
-            this.iconPiBox.Size = new System.Drawing.Size(47, 40);
+            this.iconPiBox.Size = new System.Drawing.Size(48, 41);
             this.iconPiBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.iconPiBox.TabIndex = 2;
             this.iconPiBox.TabStop = false;
@@ -388,107 +503,76 @@
             // txtBuscador
             // 
             this.txtBuscador.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBuscador.Location = new System.Drawing.Point(5, 48);
+            this.txtBuscador.Location = new System.Drawing.Point(177, 64);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(903, 30);
+            this.txtBuscador.Size = new System.Drawing.Size(396, 30);
             this.txtBuscador.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(331, 8);
+            this.label1.Location = new System.Drawing.Point(438, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(283, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "CAPTURA DE USUARIOS";
             // 
-            // panel2
+            // menuStrip1
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.dGridUsuarios);
-            this.panel2.Location = new System.Drawing.Point(11, 355);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(975, 203);
-            this.panel2.TabIndex = 3;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menúToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1045, 28);
+            this.menuStrip1.TabIndex = 31;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // dGridUsuarios
+            // menúToolStripMenuItem
             // 
-            this.dGridUsuarios.AllowUserToAddRows = false;
-            this.dGridUsuarios.AllowUserToDeleteRows = false;
-            this.dGridUsuarios.AllowUserToOrderColumns = true;
-            this.dGridUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dGridUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGridUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dGridUsuarios.BackgroundColor = System.Drawing.Color.Silver;
-            this.dGridUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dGridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Columna_ID,
-            this.Column_nombre,
-            this.CORREO,
-            this.ColumPassword,
-            this.ColumnFoto});
-            this.dGridUsuarios.Location = new System.Drawing.Point(-2, 3);
-            this.dGridUsuarios.Name = "dGridUsuarios";
-            this.dGridUsuarios.ReadOnly = true;
-            this.dGridUsuarios.RowHeadersWidth = 51;
-            this.dGridUsuarios.RowTemplate.Height = 29;
-            this.dGridUsuarios.Size = new System.Drawing.Size(970, 185);
-            this.dGridUsuarios.TabIndex = 0;
-            this.dGridUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridUsuario_CellClick);
-            this.dGridUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridUsuarios_CellContentClick);
+            this.menúToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirToolStripMenuItem,
+            this.cerrarToolStripMenuItem});
+            this.menúToolStripMenuItem.Name = "menúToolStripMenuItem";
+            this.menúToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.menúToolStripMenuItem.Text = "Menú";
             // 
-            // Columna_ID
+            // abrirToolStripMenuItem
             // 
-            this.Columna_ID.HeaderText = "ID";
-            this.Columna_ID.MinimumWidth = 6;
-            this.Columna_ID.Name = "Columna_ID";
-            this.Columna_ID.ReadOnly = true;
+            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.abrirToolStripMenuItem.Text = "Abrir";
             // 
-            // Column_nombre
+            // cerrarToolStripMenuItem
             // 
-            this.Column_nombre.HeaderText = "NOMBRE";
-            this.Column_nombre.MinimumWidth = 6;
-            this.Column_nombre.Name = "Column_nombre";
-            this.Column_nombre.ReadOnly = true;
+            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.cerrarToolStripMenuItem.Text = "Cerrar";
+            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
-            // CORREO
+            // openDialogFoto1
             // 
-            this.CORREO.HeaderText = "CORREO";
-            this.CORREO.MinimumWidth = 6;
-            this.CORREO.Name = "CORREO";
-            this.CORREO.ReadOnly = true;
-            // 
-            // ColumPassword
-            // 
-            this.ColumPassword.HeaderText = "CONTRASEÑA";
-            this.ColumPassword.MinimumWidth = 6;
-            this.ColumPassword.Name = "ColumPassword";
-            this.ColumPassword.ReadOnly = true;
-            // 
-            // ColumnFoto
-            // 
-            this.ColumnFoto.HeaderText = "FOTO";
-            this.ColumnFoto.MinimumWidth = 6;
-            this.ColumnFoto.Name = "ColumnFoto";
-            this.ColumnFoto.ReadOnly = true;
+            this.openDialogFoto1.FileName = "openFileDialog1";
             // 
             // FromUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 564);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1049, 468);
+            this.ControlBox = false;
             this.Controls.Add(this.panel3);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FromUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormUsuario";
             this.Load += new System.EventHandler(this.FromUsuario_Load_1);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGridUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxNotShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxAdd)).EndInit();
@@ -496,8 +580,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPicBoxDelet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPicBoxEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPiBox)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dGridUsuarios)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -537,5 +621,12 @@
         private DataGridViewTextBoxColumn CORREO;
         private DataGridViewTextBoxColumn ColumPassword;
         private DataGridViewTextBoxColumn ColumnFoto;
+        private PictureBox pictureBoxFoto;
+        private Button buttonFoto;
+        private OpenFileDialog openDialogFoto1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menúToolStripMenuItem;
+        private ToolStripMenuItem abrirToolStripMenuItem;
+        private ToolStripMenuItem cerrarToolStripMenuItem;
     }
 }

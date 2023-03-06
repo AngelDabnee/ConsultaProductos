@@ -124,22 +124,31 @@
   <data name="menu2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fondolol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondolol.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menú menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menú menu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondo consulta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo consulta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondo usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo usuario.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="menú menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menú menu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fondo consulta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondo consulta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fondo posible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo posible1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondo usuario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo usuario1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spiderman fondo crud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spiderman fondo crud.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
