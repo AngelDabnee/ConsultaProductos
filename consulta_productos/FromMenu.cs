@@ -46,5 +46,17 @@ namespace consulta_productos
             Form abrir = new FromUsuario();
             this.Show();
         }
+
+        private void editarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form editar = new FromCRUD();
+            this.Show();
+        }
+
+        private void buscarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form buscar = new FromConsulta();
+            this.Show();
+        }
     }
 }
