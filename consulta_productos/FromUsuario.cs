@@ -19,6 +19,7 @@ namespace consulta_productos
         MySqlCommand comando;//Comando para la asociación de conexión
         MySqlDataReader dr;//Leer los datos
         int id = 0;//La inicializamos para utilizarla como una ID, dentro del programa y usarla en borrar o editar, etc. 
+        OpenFileDialog foto = new OpenFileDialog();
         public FromUsuario()
         {
             InitializeComponent();
@@ -30,8 +31,7 @@ namespace consulta_productos
             if (txtNombre.Enabled == false &&
                 txtCorreo.Enabled == false &&
                 txtPassword.Enabled == false &&
-                txtConfirmarPassword.Enabled == false &&
-                txtFoto.Enabled == false)
+                txtConfirmarPassword.Enabled == false)
             {
                 //Se habilitan y se limpian. 
                 this.limpiarForm(true);
@@ -60,6 +60,10 @@ namespace consulta_productos
                     {
                         //msg OK
                         MessageBox.Show("USUARIO DADO DE ALTA");
+                        if (pictureBoxFoto.Image != null)
+                        {
+                            pictureBoxFoto.Image.Save("..\\..\\..\\imagenesUsuarios\\" + txtFoto.Text);
+                        }
                     }
                     else
                     {
@@ -103,12 +107,14 @@ namespace consulta_productos
             int celdas = e.RowIndex;//Al index donde le dimos click, (se llama e)
             //En cada campo, de la tabla, en la variable creada, en la celda de la posición del campo
             txtNombre.Text = dGridUsuarios.Rows[celdas].Cells[1].Value.ToString();
-            txtPassword.Text = dGridUsuarios.Rows[celdas].Cells[2].Value.ToString();
             txtCorreo.Text = dGridUsuarios.Rows[celdas].Cells[3].Value.ToString();
+            txtPassword.Text = dGridUsuarios.Rows[celdas].Cells[2].Value.ToString();
             txtFoto.Text = dGridUsuarios.Rows[celdas].Cells[4].Value.ToString();
+            pictureBoxFoto.ImageLocation = "..\\..\\..\\imagenesUsuarios\\" + txtFoto.Text;
             this.id = int.Parse((dGridUsuarios.Rows[celdas].Cells[0].Value.ToString()));//Convertimos para no tener error de tipos de dato
                                                                       //Además de esto, esta la usamos, para pasar los datos del producto
                                                                       //y eliminarlos sin afectar TODOS los datos de la tabla
+            pictureBoxFoto.ImageLocation = txtFoto.Text;//para que nos aparezca el usuario al selecccionarlo
         }
         //Funcionalidad del boton edit
         private void iconPicBoxEdit_Click(object sender, EventArgs e)
@@ -124,6 +130,11 @@ namespace consulta_productos
             if (res == 1) 
             {
                 MessageBox.Show("DATOS ACTUALIZADOS CORRECTAMENTE");
+                if (pictureBoxFoto.Image != null)
+                {
+                    pictureBoxFoto.Image.Save("..\\..\\..\\imagenesUsuarios\\" + txtFoto.Text);
+                }
+
             }
             else
             {
@@ -143,15 +154,22 @@ namespace consulta_productos
             con.Open();
             comando = new MySqlCommand("DELETE FROM usuarios WHERE id = " + this.id);
             comando.Connection = con;
-            comando.ExecuteNonQuery();
-            try
-            {   //Aquí, estamos intentando eliminar los productos en el renglon donde está, con el index es el valor que tiene
-                dGridUsuarios.Rows.RemoveAt(this.dGridUsuarios.CurrentRow.Index);
-                MessageBox.Show("PRODUCTO ELIMINADO CON ÉXITO");
-            }
-            catch(Exception) //Si llegasemos a tener una falla al eliminar el producto
+            int res = comando.ExecuteNonQuery();
+            if (res == 1)
             {
-                MessageBox.Show("ERROR AL ELIMINAR EL PRODUCTO");
+                try
+                {   //Aquí, estamos intentando eliminar los productos en el renglon donde está, con el index es el valor que tiene
+                    dGridUsuarios.Rows.RemoveAt(this.dGridUsuarios.CurrentRow.Index);
+                    MessageBox.Show("PRODUCTO ELIMINADO CON ÉXITO");
+                    if (pictureBoxFoto.Image != null)
+                    {
+                        File.Delete("..\\..\\..\\imagenesConsultaUsuarios\\" + txtFoto.Text);
+                    }
+                }
+                catch //Si llegasemos a tener una falla al eliminar el producto
+                {
+                    MessageBox.Show("ERROR AL ELIMINAR EL PRODUCTO");
+                }
             }
             con.Close();
             //vamos a limpiar los texto y deshabilitarlos
@@ -182,11 +200,11 @@ namespace consulta_productos
                     var mystring = dr.GetString(0);
                     //id-nombre-codigobarra-descipcion-precio-imagen
                     // 0    1        2           3        4      5
-                    dGridUsuarios.Rows.Add(new object[] {dr.GetInt16(0),
-                                                          dr.GetString(1),
-                                                          dr.GetString(2),
-                                                          dr.GetString(3),
-                                                          dr.GetString(4) });//Con esto definimos las filas de nuestra tabla, según las características de esta
+                    dGridUsuarios.Rows.Add(new object[] {dr.GetInt16("id"),
+                                                          dr.GetString("nombre"),
+                                                          dr.GetString("password"),
+                                                          dr.GetString("correo"),
+                                                          dr.GetString("foto") });//Con esto definimos las filas de nuestra tabla, según las características de esta
                 }
 
             }
@@ -243,8 +261,7 @@ namespace consulta_productos
             if (txtNombre.Enabled == false &&
                 txtCorreo.Enabled == false &&
                 txtPassword.Enabled == false &&
-                txtConfirmarPassword.Enabled == false &&
-                txtFoto.Enabled == false)
+                txtConfirmarPassword.Enabled == false)
             {
                 //Se habilitan y se limpian. 
                 this.limpiarForm(true);
@@ -252,9 +269,10 @@ namespace consulta_productos
             int celdas = e.RowIndex;//Al index donde le dimos click, (se llama e)
             //En cada campo, de la tabla, en la variable creada, en la celda de la posición del campo
             txtNombre.Text = dGridUsuarios.Rows[celdas].Cells[1].Value.ToString();
-            txtPassword.Text = dGridUsuarios.Rows[celdas].Cells[2].Value.ToString();
             txtCorreo.Text = dGridUsuarios.Rows[celdas].Cells[3].Value.ToString();
+            txtPassword.Text = dGridUsuarios.Rows[celdas].Cells[2].Value.ToString();
             txtFoto.Text = dGridUsuarios.Rows[celdas].Cells[4].Value.ToString();
+            pictureBoxFoto.ImageLocation = "..\\..\\..\\imagenesUsuarios\\" + txtFoto.Text;//Para guardar la ruta
             this.id = int.Parse((dGridUsuarios.Rows[celdas].Cells[0].Value.ToString()));//Convertimos para no tener error de tipos de dato
                                                                                         //Además de esto, esta la usamos, para pasar los datos del producto
                                                                                         //y eliminarlos sin afectar TODOS los datos de la 
@@ -283,17 +301,38 @@ namespace consulta_productos
                     {
                         //mostrar cada campo dentro un RENGLON del GridView
                         dGridUsuarios.Rows.Add(
-                                dr.GetInt32(0),
-                                dr.GetString(1),
-                                dr.GetString(3),
-                                dr.GetString(2),
-                                dr.GetString(4)
+                                dr.GetInt32("id"),
+                                dr.GetString("nombre"),
+                                dr.GetString("password"),
+                                dr.GetString("correo"),
+                                dr.GetString("foto")
                             );
                     }
                 }
                 //6.Cerramos la conexión. 
                 con.Close();
             }
+        }
+
+        private void buttonFoto_Click(object sender, EventArgs e)
+        {
+            DialogResult res = openDialogFoto1.ShowDialog();
+            //cargar el archivo
+            if (res == DialogResult.OK)
+            {
+                pictureBoxFoto.Image = new Bitmap(openDialogFoto1.FileName);
+                //crear un nombre unico
+                DateTime dtNombre = DateTime.Now;
+                string nombreImg = "prod_" + dtNombre.Ticks + ".png";
+                txtFoto.Text = nombreImg;
+            }
+            //por si le da click en cerrar. 
+            else { }
+        }
+        private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form cerrar = new FromUsuario();
+            this.Close();
         }
     }
 

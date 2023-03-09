@@ -83,9 +83,29 @@ namespace consulta_productos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondo_posible {
+            get {
+                object obj = ResourceManager.GetObject("fondo posible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo_usuario {
             get {
                 object obj = ResourceManager.GetObject("fondo usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_usuario1 {
+            get {
+                object obj = ResourceManager.GetObject("fondo usuario1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,16 @@ namespace consulta_productos.Properties {
         internal static System.Drawing.Bitmap new_login {
             get {
                 object obj = ResourceManager.GetObject("new login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spiderman_fondo_crud {
+            get {
+                object obj = ResourceManager.GetObject("spiderman fondo crud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
